@@ -30,5 +30,7 @@
 ## Projects
 **Project 1: Analyze the performance of individual stocks and investment portfolios by using Python**
 - Extract the historical price from Yahoo!Finance from the top ten stocks with the highest market capitalization from the New Zealand Stock Exchange.
-- Create the interactive charts of stocks' historical prices over the time; calculate their monthly returns, annualized returns, the standard deviation of returns and compare their performance, create the equally weighted portfolio; build a function to calculate the annualized return and risk of a portfolio; create randomly weighted porfolios; and find the best performance portfolio (the optimal portfolio) to give advice for investors.
+- Create the interactive charts of stocks' historical prices over the time; calculate their monthly returns, annualized returns, the standard deviation of returns and compare  stocks's performance.
+- Create the equally weighted portfolio; build a function to calculate the annualized return and risk of a portfolio; create randomly weighted porfolios; and find the best performance portfolio (the optimal portfolio) to give advice for investors.
+  
 **Project 2: LEGO**
