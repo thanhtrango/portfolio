@@ -3,10 +3,10 @@
 #### Technical skills: SQL, Power BI, R, Python, Excel
 
 ## Education
-- M.S., Applied Data Science | University of Canterbury, NZ (_2023-2024_)
-- M.A., Financial Economics | The University of Sydney, Australia (_2011-2012_)
-- Post Graduate Study Certificate, Applied Economics and Public Policy | Fulbirght Economics Teaching Program, Vietnam (_2007-2008_)
-- B.A., International Business | Faculty of Economics, Vietnam National University (_2001-2005_)
+- M.S., Applied Data Science, University of Canterbury, NZ (_2023-2024_)
+- M.A., Financial Economics, The University of Sydney, Australia (_2011-2012_)
+- Post Graduate Study Certificate, Applied Economics and Public Policy, Fulbirght Economics Teaching Program, Vietnam (_2007-2008_)
+- B.A., International Business, Faculty of Economics, Vietnam National University (_2001-2005_)
 
 ## Work Experience
 **Program Manager | Vintech City, Vietnam (_May 2019 – Apr 2020_)**
