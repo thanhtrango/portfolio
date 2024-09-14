@@ -1,41 +1,35 @@
 # Data scientist
 
 ### Education
-MASTER (2024), THE UNIVERSITY OF CANTERBURY, NZ
-Applied Data Science
+Master, Applied Data Science (2023-2024), The University of Canterbury, New Zealand
 
-MASTER (2012), THE UNIVERSITY OF SYDNEY, AUSTRALIA
-Financial Economics
+Master, Financial Economics (2011-2012), The University of Sydney, Australia
 Sponsored by Australian Development Scholarship (ADS)
 
-CERTIFICATE OF POST GRADUATE STUDY (2008), 
-FULBRIGHT ECONOMICS TEACHING PROGRAM, VIETNAM
-Applied Economics and Public Policy
-Sponsored by Vietnam Fulbright Economics Teaching Program
+Post Graduate Study Certificate, Applied Economics and Public Policy (2007-2008), Fulbirght Economics Teaching Program, Vietnam
 
-BACHELOR OF ARTS (2005), FACULTY OF ECONOMICS, VNU HCMC, VIETNAM
-International Business
+BA, Internation Business  (2001-2005), Faculty of Economics, Vietnam National University, HCMC
 
 ### Work Experience
-PROGRAM MANAGER, VINTECH CITY
+Program Manager, Vintech City, Vietnam
 May 2019 – April 2020
-o	Build action plan and budget plan for SAP and Corporate Semester sponsorship programs. 
-o	Find, connect and neogotiate with co-sponsorship/co-operation partners (SAP-UA, NGS, Deloitte, Palo Alto, Practice labs, Robusta, DS Lab – VIASM..)
-o	Work with Vietnamese universities to promote sponsorship.  
-o	Organize SAP and AI training programs (train-the-trainers workshops, training classes at universities). 
-o	Build process, procedures, regulations and report system for programs.
-o	Support for internal training in Project Management.
+- Build action plan and budget plan for SAP and Corporate Semester sponsorship programs.
+- Find, connect and neogotiate with co-sponsorship/co-operation partners (SAP-UA, NGS, Deloitte, Palo Alto, Practice labs, Robusta, DS Lab – VIASM..)
+- Work with Vietnamese universities to promote sponsorship.  
+- Organize SAP and AI training programs (train-the-trainers workshops, training classes at universities). 
+- Build process, procedures, regulations and report system for programs.
+- Support for internal training in Project Management.
 
-VICE HEAD, DEPARTMENT OF INTERNATIONAL BUSINESS, FACULTY OF INTERNATIONAL ECONOMIC RELATIONS, UNIVERSITY OF ECONOMICS AND LAW
+Vice head, Department of International Business, Faculty of International Economic Relations, University of Economics and Law, Vietnam
 July 2017 – June 2023
-o	Be responsible for ensuring the training quality according to AUN-QA standards at the program level.
-o	Be responsible for teaching content, quality, and schedule in the program.
-o	Manage the compilation of curriculum and reference materials.
-o	Manage the research and innovation of teaching methods, students’ assessment methods. 
-o	Work with foreign universities to map training programs and promote affiliate programs.
+- Be responsible for ensuring the training quality according to AUN-QA standards at the program level.
+- Be responsible for teaching content, quality, and schedule in the program.
+- Manage the compilation of curriculum and reference materials.
+- Manage the research and innovation of teaching methods, students’ assessment methods. 
+- Work with foreign universities to map training programs and promote affiliate programs.
 
-LECTURER, FACULTY OF INTERNATIONAL ECONOMIC RELATIONS, UNIVERSITY OF ECONOMICS AND LAW 
+Lecturer, Faculty of International Economic Relations, University of Economics and Law, Vietnam 
 Sep 2005 – June 2023
-o	In charge of teaching Econometrics; Project Appraisal & Management; Cross-Cultural Management
+- In charge of teaching Econometrics; Project Appraisal & Management; Cross-Cultural Management
 
 ### Project
