@@ -5,7 +5,7 @@ Teachical Skills: SQL, Power BI, R, Python, Excel
 ### Education
 M.S., Applied Data Science | The University of Canterbury, New Zealand (2023 - 2024)
 
-M.A., Financial Economics | The University of Sydney, Australia (2011 - 2012)
+M.A., Financial Economics | The University of Sydney, Australia (2011 - 2012) test
 
 Post Graduate Study Certificate, Applied Economics and Public Policy | Fulbirght Economics Teaching Program, Vietnam (2007 - 2008)
 
