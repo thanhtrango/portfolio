@@ -1,6 +1,6 @@
 # Data scientist
 
-#### Teachical Skills: SQL, Power BI, R, Python, Excel
+#### Technical Skills: SQL, Power BI, R, Python, Excel
 
 ## Education
 - M.S., Applied Data Science | The University of Canterbury, New Zealand (_2023 - 2024_)
