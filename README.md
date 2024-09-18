@@ -48,5 +48,5 @@
 - B.A., International Business, Faculty of Economics, Vietnam National University (2001-2005)
 
 ## Scholarships
-- Australian Awards covering stipend and tuition fees for English preparation and Master course at the University of Sydney (2010 - 2012)
+- Australian Awards covering stipend and tuition fees for English preparation and Master courses at the University of Sydney (2010 - 2012)
 - Fulbright Economics Teaching Program, providing stipend and tuition fees for Postgraduate Certificate (2007 - 2008).
