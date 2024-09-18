@@ -3,7 +3,7 @@
 ### Skills: R, Python, Excel
 
 ## Projects
-**Analyze the performance of individual stocks and investment portfolios using Excel and Python | Indiviudal project | May 2024**
+**Analyze the performance of individual stocks and investment portfolios using Excel and Python | Individual project | May 2024**
 - Use Excel to sort and identify the top ten stocks with the highest market capitalization on the New Zealand Stock Exchange.
 - Use the *yfinance* package to extract historical prices for these stocks from Yahoo!Finance.
 - Use the *matplotlib*, *plotly*, and *cufflinks* packages to create interactive charts of the stocks' historical prices over time.
