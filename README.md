@@ -1,6 +1,6 @@
 # Data Analyst
 
-### Skills: SQL, Tableau, R, Python, Excel
+### Skills: R, Python, Excel
 
 ## Projects
 **Analyze the performance of individual stocks and investment portfolios using Excel and Python | Indiviudal project | May 2024**
@@ -33,6 +33,7 @@
 - Work with foreign universities to map training programs and promote affiliate programs.
 
 **Vintech City, Vietnam**
+
 ***Program Manager | May 2019 – April 2020***
 - Develop action plans and budget plans for the SAP and Corporate Semester sponsorship program.
 - Identify, connect, and negotiate with co-sponsorship and partnership organizations (SAP-UA, NGS, Deloitte, Palo Alto, Practice Labs, Robusta, DS Lab – VIASM, etc.).
