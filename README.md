@@ -3,20 +3,20 @@
 ## Skills: SQL, Tableau, R, Python, Excel
 
 ## Projects
-**Analyze the performance of individual stocks and investment portfolios using Excel and Python | Indiviudal project | May 2024 **
+**Analyze the performance of individual stocks and investment portfolios using Excel and Python | Indiviudal project | May 2024**
 - Use Excel to sort and identify the top ten stocks with the highest market capitalization on the New Zealand Stock Exchange.
 - Use the *yfinance* package to extract historical prices for these stocks from Yahoo!Finance.
 - Use the *matplotlib*, *plotly*, and *cufflinks* packages to create interactive charts of the stocks' historical prices over time.
 - Apply the *Pandas* and *NumPy* libraries to calculate monthly returns, annualized returns, the standard deviation of returns, and compare individual stock performance.
 - Construct an equally weighted portfolio, build a function to calculate its annualized return and risk, create randomly weighted porfolios; and find the best performance portfolio (the optimal portfolio) to give advice for investors.
 
-**LEGO product trends and market dynamics using R | Group project | Jan 2024 **
+**LEGO product trends and market dynamics using R | Group project | Jan 2024**
 - Use R to merge and clean raw datasets related to LEGO product information from Rebrickable.com and LEGO market data from Brickset.com and Kaggle.com, creating comprehensive LEGO product, color, and secondary market datasets spanning from 1953 to 2022.
 - Analyze the product dataset in R to assess the progress and complexity of LEGO sets, the evolution of LEGO themes, and the variety of LEGO colours.
 - Examine the best and worst-performing LEGO themes and sets in the secondary market based on Net Profit and Return on Investment (ROI) to assess the potential of LEGO sets as an investment.
 - Apply Random Forest, Gradient Boosting, and Linear Regression algorithms to predict LEGO resale prices.
 
-**Unlocking the Pattern: A Remarkable Plunge in Youth Crime Rates in New Zealand from 2015 to 2022 using R | Individual project | Sep 2023 **
+**Unlocking the Pattern: A Remarkable Plunge in Youth Crime Rates in New Zealand from 2015 to 2022 using R | Individual project | Sep 2023**
 - Use R to clean, summarize, and visualize offending data from the New Zealand Police to identify trends in youth offenders compared to the overall offender population from 2015 to 2022, based on legal proceedings.
 - Examine the profile of youth offenders in New Zealand, focusing on gender distribution, ethnic composition, and crime behavior.
 
