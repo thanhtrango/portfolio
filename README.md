@@ -1,14 +1,13 @@
 # Data Analyst
 
-## Skills: SQL, Tableau, R, Python, Excel
+### Skills: SQL, Tableau, R, Python, Excel
 
 ## Projects
 **Analyze the performance of individual stocks and investment portfolios using Excel and Python | Indiviudal project | May 2024**
 - Use Excel to sort and identify the top ten stocks with the highest market capitalization on the New Zealand Stock Exchange.
 - Use the *yfinance* package to extract historical prices for these stocks from Yahoo!Finance.
 - Use the *matplotlib*, *plotly*, and *cufflinks* packages to create interactive charts of the stocks' historical prices over time.
-- Apply the *Pandas* and *NumPy* libraries to calculate monthly returns, annualized returns, the standard deviation of returns, and compare individual stock performance.
-- Construct an equally weighted portfolio, build a function to calculate its annualized return and risk, create randomly weighted porfolios; and find the best performance portfolio (the optimal portfolio) to give advice for investors.
+- Apply the *Pandas* and *NumPy* libraries to compare individual stock performance and find the optimal portfolio to give advice for investors.
 
 **LEGO product trends and market dynamics using R | Group project | Jan 2024**
 - Use R to merge and clean raw datasets related to LEGO product information from Rebrickable.com and LEGO market data from Brickset.com and Kaggle.com, creating comprehensive LEGO product, color, and secondary market datasets spanning from 1953 to 2022.
@@ -22,18 +21,18 @@
 
 ## Work Experience
 **Faculty of International Economic Relations, University of Economics and Law, Vietnam**
-Vice head | Department of International Business | July 2017 – June 2023
+***Lecturer | Department of International Business | September 2005 – June 2023***
+- In charge of teaching Econometrics; Project Appraisal & Management; Cross-Cultural Management
+- 
+***Vice head | Department of International Business | July 2017 – June 2023***
 - Be responsible for ensuring the training quality according to AUN-QA standards at the program level.
 - Be responsible for teaching content, quality, and schedule in the program.
 - Manage the compilation of curriculum and reference materials.
 - Manage the research and innovation of teaching methods, students’ assessment methods. 
 - Work with foreign universities to map training programs and promote affiliate programs.
 
-Lecturer | Department of International Business | September 2005 – June 2023
-- In charge of teaching Econometrics; Project Appraisal & Management; Cross-Cultural Management
-
 **Vintech City, Vietnam**
-Program Manager | May 2019 – April 2020
+***Program Manager | May 2019 – April 2020***
 - Build action plan and budget plan for SAP and Corporate Semester sponsorship programs.
 - Find, connect and neogotiate with co-sponsorship/co-operation partners (SAP-UA, NGS, Deloitte, Palo Alto, Practice labs, Robusta, DS Lab – VIASM..)
 - Work with Vietnamese universities to promote sponsorship.  
