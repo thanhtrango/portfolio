@@ -12,7 +12,7 @@
 **LEGO product trends and market dynamics using R | Group project | Jan 2024**
 - Use R to merge and clean raw datasets related to LEGO product information from *Rebrickable* and LEGO market data from *Brickset* and *Kaggle*, creating comprehensive LEGO product, color, and secondary market datasets spanning from 1953 to 2022.
 - Analyze the product and colour datasets in R to assess the progress and complexity of LEGO sets, the evolution of LEGO themes, and the variety of LEGO colours.
-- Examine the best and worst-performing LEGO themes and sets in the secondary market based on Net Profit and Return on Investment (ROI) to assess the potential of LEGO sets and themes as an investment.
+- Examine the best and worst-performing LEGO sets and themes in the secondary market based on Net Profit and Return on Investment (ROI) to assess the potential of LEGO sets and themes as an investment.
 - Apply Random Forest, Gradient Boosting, and Linear Regression algorithms to predict LEGO resale prices.
 
 **Unlocking the Pattern: A Remarkable Plunge in Youth Crime Rates in New Zealand from 2015 to 2022 using R | Individual project | Sep 2023**
