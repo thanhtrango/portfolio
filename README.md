@@ -22,10 +22,10 @@
 ## Work Experience
 **Department of International Business, Faculty of International Economic Relations, University of Economics and Law | Vietnam**
 
-Lecturer | September 2005 – June 2023
+***Lecturer | September 2005 – June 2023***
 - In charge of teaching Econometrics; Project Appraisal & Management; Cross-Cultural Management
   
-Vice head | July 2017 – June 2023
+***Vice head | July 2017 – June 2023***
 - Be responsible for ensuring the training quality according to AUN-QA standards at the program level.
 - Be responsible for teaching content, quality, and schedule in the program.
 - Manage the compilation of curriculum and reference materials.
@@ -34,13 +34,12 @@ Vice head | July 2017 – June 2023
 
 **Vintech City, Vietnam**
 
-Program Manager | May 2019 – April 2020
-- Build action plan and budget plan for SAP and Corporate Semester sponsorship programs.
-- Find, connect and neogotiate with co-sponsorship/co-operation partners (SAP-UA, NGS, Deloitte, Palo Alto, Practice labs, Robusta, DS Lab – VIASM..)
-- Work with Vietnamese universities to promote sponsorship.  
-- Organize SAP and AI training programs (train-the-trainers workshops, training classes at universities). 
-- Build process, procedures, regulations and report system for programs.
-- Support for internal training in Project Management.
+***Program Manager | May 2019 – April 2020***
+- Develop action plans and budget plans for the SAP and Corporate Semester sponsorship program.
+- Identify, connect, and negotiate with co-sponsorship and partnership organizations (SAP-UA, NGS, Deloitte, Palo Alto, Practice Labs, Robusta, DS Lab – VIASM, etc.).
+- Collaborate with Vietnamese universities to promote sponsorship initiatives.  
+- Organize SAP and AI training programs, including train-the-trainer workshops and university training classes. 
+- Establish processes, procedures, regulations, and reporting systems for program management and provide support for internal training in project management.
 
 ## Education
 - M.S., Applied Data Science, University of Canterbury, NZ (2023-2024)
