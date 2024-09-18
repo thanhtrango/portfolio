@@ -33,7 +33,6 @@
 - Work with foreign universities to map training programs and promote affiliate programs.
 
 **Vintech City, Vietnam**
-
 ***Program Manager | May 2019 – April 2020***
 - Develop action plans and budget plans for the SAP and Corporate Semester sponsorship program.
 - Identify, connect, and negotiate with co-sponsorship and partnership organizations (SAP-UA, NGS, Deloitte, Palo Alto, Practice Labs, Robusta, DS Lab – VIASM, etc.).
@@ -47,6 +46,6 @@
 - Post Graduate Study Certificate, Applied Economics and Public Policy, Fulbirght Economics Teaching Program, Vietnam (2007-2008)
 - B.A., International Business, Faculty of Economics, Vietnam National University (2001-2005)
 
-# Scholarships
+## Scholarships
 - Australian Awards covering stipend and tuition fees for English preparation and Master course at the University of Sydney (2010 - 2012)
 - Fulbright Economics Teaching Program, providing stipend and tuition fees for Postgraduate Certificate (2007 - 2008).
