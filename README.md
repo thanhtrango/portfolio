@@ -20,12 +20,12 @@
 - Examine the profile of youth offenders in New Zealand, focusing on gender distribution, ethnic composition, and crime behavior.
 
 ## Work Experience
-**Faculty of International Economic Relations, University of Economics and Law, Vietnam**
+**Department of International Business, Faculty of International Economic Relations, University of Economics and Law | Vietnam**
 
-***Lecturer | Department of International Business | September 2005 – June 2023***
+Lecturer | September 2005 – June 2023
 - In charge of teaching Econometrics; Project Appraisal & Management; Cross-Cultural Management
   
-***Vice head | Department of International Business | July 2017 – June 2023***
+Vice head | July 2017 – June 2023
 - Be responsible for ensuring the training quality according to AUN-QA standards at the program level.
 - Be responsible for teaching content, quality, and schedule in the program.
 - Manage the compilation of curriculum and reference materials.
@@ -33,7 +33,8 @@
 - Work with foreign universities to map training programs and promote affiliate programs.
 
 **Vintech City, Vietnam**
-***Program Manager | May 2019 – April 2020***
+
+Program Manager | May 2019 – April 2020
 - Build action plan and budget plan for SAP and Corporate Semester sponsorship programs.
 - Find, connect and neogotiate with co-sponsorship/co-operation partners (SAP-UA, NGS, Deloitte, Palo Alto, Practice labs, Robusta, DS Lab – VIASM..)
 - Work with Vietnamese universities to promote sponsorship.  
