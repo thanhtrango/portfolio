@@ -23,7 +23,7 @@
 **Faculty of International Economic Relations, University of Economics and Law, Vietnam**
 ***Lecturer | Department of International Business | September 2005 – June 2023***
 - In charge of teaching Econometrics; Project Appraisal & Management; Cross-Cultural Management
-- 
+  
 ***Vice head | Department of International Business | July 2017 – June 2023***
 - Be responsible for ensuring the training quality according to AUN-QA standards at the program level.
 - Be responsible for teaching content, quality, and schedule in the program.
@@ -46,6 +46,6 @@
 - Post Graduate Study Certificate, Applied Economics and Public Policy, Fulbirght Economics Teaching Program, Vietnam (2007-2008)
 - B.A., International Business, Faculty of Economics, Vietnam National University (2001-2005)
 
-
-
-
+# Scholarships
+- Australian Awards covering stipend and tuition fees for English preparation and Master course at the University of Sydney (2010 - 2012)
+- Fulbright Economics Teaching Program, providing stipend and tuition fees for Postgraduate Certificate (2007 - 2008).
