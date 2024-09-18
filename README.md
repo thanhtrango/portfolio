@@ -21,6 +21,7 @@
 
 ## Work Experience
 **Faculty of International Economic Relations, University of Economics and Law, Vietnam**
+
 ***Lecturer | Department of International Business | September 2005 – June 2023***
 - In charge of teaching Econometrics; Project Appraisal & Management; Cross-Cultural Management
   
