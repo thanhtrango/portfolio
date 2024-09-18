@@ -54,11 +54,11 @@
 - “Do we need big banks in Vietnam? Evidence on Performance.” (with Minh Q. Le, Thanh T Ngo), 2016, Vietnam Economist Annual Meeting (VEAM) – Da Nang City.
 
 ## Education
-- M.S., Applied Data Science, University of Canterbury, NZ (2023-2024)
-- M.A., Financial Economics, The University of Sydney, Australia (2011-2012)
-- Post Graduate Study Certificate, Applied Economics and Public Policy, Fulbright Economics Teaching Program, Vietnam (2007-2008)
+- **M.S., Applied Data Science** | _University of Canterbury, NZ_ | 2023-2024
+- **M.A., Financial Economics** | _The University of Sydney, Australia_ | 2011-2012
+- **Post Graduate Study Certificate, Applied Economics and Public Policy**, _Fulbright Economics Teaching Program, Vietnam_ (2007-2008)
 - B.A., International Business, Faculty of Economics, Vietnam National University (2001-2005)
 
 ## Scholarships
-- Australian Awards covering stipend and tuition fees for English preparation and Master courses at the University of Sydney (2010 - 2012)
-- Fulbright Economics Teaching Program, providing stipend and tuition fees for Postgraduate Certificate (2007 - 2008).
+- **Australian Awards**: Covered stipend and tuition fees for English preparation and Master courses at the University of Sydney (2010 - 2012).
+- **Fulbright Economics Teaching Program**: Provided stipend and tuition fees for Postgraduate Certificate (2007 - 2008).
