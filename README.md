@@ -43,12 +43,12 @@
 ## Education
 - M.S., **Applied Data Science**, _University of Canterbury, New Zealand_ (2023 - 2024)
 - M.A., **Financial Economics**, _The University of Sydney, Australia_ (2011 - 2012)
-- Post Graduate Study Certificate, **Applied Economics and Public Policy**, _Fulbright Economics Teaching Program, Vietnam_ (2007 - 2008)
+- Postgraduate Certificate, **Applied Economics and Public Policy**, _Fulbright Economics Teaching Program, Vietnam_ (2007 - 2008)
 - B.A., **International Business**, _Faculty of Economics, Vietnam National University_ (2001 - 2005)
 
 ## Scholarships
 - **Australian Awards**: Covered stipend and tuition fees for English preparation and Master courses at the University of Sydney (2010 - 2012).
-- **Fulbright Economics Teaching Program**: Provided stipend and tuition fees for Postgraduate Certificate (2007 - 2008).
+- **Fulbright Economics Teaching Program**: Covered stipend and tuition fees for Postgraduate course (2007 - 2008).
 
 ## Publications
 - “An incentive for risk taking: The case of banks in Asean 6.”, _(with Minh Q. Le, Thanh T Ngo)_, 2019, _Conferene on Econometrics and Statistical methods: applications in Economics and Finance, HCMC_.
