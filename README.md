@@ -1,5 +1,5 @@
 # Data Analyst
-Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [![Linkedin](https://i.sstatic.net/gVE0j.png) LinkedIn](https://www.linkedin.com/in/thanh-tra-ngo-71a23b3b/)
+Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [![Linkedin](https://i.sstatic.net/gVE0j.png)](https://www.linkedin.com/in/thanh-tra-ngo-71a23b3b/)
 &nbsp; | [![GitHub](https://i.sstatic.net/tskMh.png) GitHub](https://camellia912.github.io/portfolio/)
 
 ### Skills: R, Python, Excel
