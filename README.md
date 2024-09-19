@@ -30,7 +30,7 @@
 
 ***Lecturer | Sep 2005 – Jun 2023***
 - Teach courses in Econometrics; Project Appraisal & Management and Cross-Cultural Management.
-- Supervise teaching content, schedules, and ensure program quality aligned with AUN-QA standards as Vice Head of the International Business Department, Faculty of International Economic Relations (2017-2023).
+- Supervise teaching content, schedules, and ensure program quality aligned with AUN-QA standards as Vice Head of the International Business Department, Faculty of International Economic Relations (2017 - 2023).
 
 **Vintech City, Vingroup, Vietnam**
 
