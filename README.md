@@ -25,7 +25,6 @@
 ***Logistics System And Solution Consultant | July 2024 - Present*** 
 - Design and deliver consulting services for digital transformation in logistics operations.
 - Contribute to process improvements for Transportation Management Software (TMS) and Warehouse Management Software (WMS).
-  
 
 **Department of International Business, Faculty of International Economic Relations, University of Economics and Law | Vietnam**
 
@@ -37,7 +36,6 @@
 - Supervise teaching content, course scheduling, and quality assurance for the department.
 - Manage curriculum development and teaching method innovations.
 - Collaborate with foreign universities to map training programs and promote partnerships.
-
 
 **Vintech City, Vingroup, Vietnam**
 
@@ -62,3 +60,9 @@
 ## Scholarships
 - **Australian Awards**: Covered stipend and tuition fees for English preparation and Master courses at the University of Sydney (2010 - 2012).
 - **Fulbright Economics Teaching Program**: Provided stipend and tuition fees for Postgraduate Certificate (2007 - 2008).
+
+## References
+- Kurt Binh | CEO, Smartlog | Email: kurtbinh@gosmartlog.com | Tel: (+84)-917-429-999
+- Phi L. H. Truong | Former CEO, Vintech City | Email: phi@ibpvietnam.com | Phone: (+84)-919-234-583
+- Minh Q. Le | Market Risk Anakyst, Shell Energy Australia | Email: | Phone:
+
