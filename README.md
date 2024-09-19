@@ -3,61 +3,59 @@
 ### Skills: R, Python, Excel
 
 ## Projects
-**Analyze the performance of individual stocks and investment portfolios using Excel and Python | Individual project | May 2024**
-- Use Excel to sort and identify the top ten stocks with the highest market capitalization on the New Zealand Stock Exchange.
-- Use the *yfinance* package to extract historical prices for these stocks from Yahoo!Finance.
-- Use the *matplotlib*, *plotly*, and *cufflinks* packages to create interactive charts of the stocks' historical prices over time.
-- Apply the *Pandas* and *NumPy* libraries to compare individual stock performance and find the optimal portfolio to give advice for investors.
+**Stock Performance and Investment Portfolio Analysis using Excel and Python** | _Individual project | May 2024_
+- Sort and identify the top ten stocks by market capitalization on the New Zealand Stock Exchange using Excel.
+- Extract historical stock prices from Yahoo!Finance using the *yfinance* package.
+- Create interactive charts of the stocks prices over time using the *matplotlib*, *plotly*, and *cufflinks* packages.
+- Apply *Pandas* and *NumPy* libraries to analyze individual stock performance and identify the optimal portfolio for investor advice.
 
-**LEGO product trends and market dynamics using R | Group project with Zichen Zhou and Xin Lei | Jan 2024**
-- Use R to merge and clean raw datasets related to LEGO product information from *Rebrickable* and LEGO market data from *Brickset* and *Kaggle*, creating comprehensive LEGO product, color, and secondary market datasets spanning from 1953 to 2022.
+**LEGO Product Trends and Market Dynamics Analysis using R** | _Group project with Zichen Zhou and Xin Lei | January 2024_
+- Merge and clean raw datasets from Rebrickable, Brickset and Kaggle using R to form LEGO product, color, and secondary market datasets from 1953 to 2022.
 - Analyze the product and colour datasets in R to assess the progress and complexity of LEGO sets, the evolution of LEGO themes, and the variety of LEGO colours.
-- Examine the best and worst-performing LEGO sets and themes in the secondary market based on Net Profit and Return on Investment (ROI) to assess the potential of LEGO sets and themes as an investment.
+- Evaluate the performance of LEGO sets and themes in the secondary market based on Net Profit and Return on Investment (ROI) to assess the potential of LEGO sets and themes as potential investments.
 - Apply Random Forest, Gradient Boosting, and Linear Regression algorithms to predict LEGO resale prices.
 
-**Unlocking the Pattern: A Remarkable Plunge in Youth Crime Rates in New Zealand from 2015 to 2022 using R | Individual project | Sep 2023**
-- Use R to clean, summarize, and visualize offending data from the New Zealand Police to identify trends in youth offenders compared to the overall offender population from 2015 to 2022, based on legal proceedings.
-- Examine the profile of youth offenders in New Zealand, focusing on gender distribution, ethnic composition, and crime behavior.
+**Youth Crime Trends in New Zealand (2015 - 2022) using R** | _Individual project | September 2023_
+- Clean, summarize, and visualize New Zealand Police offending data using R to identify trends in youth offenders compared to the general offender population.
+- Examine youth offender profiles by gender, ethnicity and and crime behavior.
 
 ## Work Experience
 **Smartlog Supply Chain Solutions Corporation | Vietnam**
 
-***Logistics System And Solution Consultant | July 2024 - present*** 
-- Design and deliver consulting services for digital solutions in logistics operations projects.
-- Contribute Participate in process improvement proposals for Transportation Management Software (TMS) and Warehouse Management Software (WMS).
+***Logistics System And Solution Consultant | July 2024 - Present*** 
+- Design and deliver consulting services for digital transformation in logistics operations.
+- Contribute to process improvements for Transportation Management Software (TMS) and Warehouse Management Software (WMS).
 
 **Department of International Business, Faculty of International Economic Relations, University of Economics and Law | Vietnam**
 
 ***Lecturer | September 2005 – June 2023***
-- In charge of teaching Econometrics; Project Appraisal & Management; Cross-Cultural Management
+- Teach courses including Econometrics; Project Appraisal & Management and Cross-Cultural Management.
   
 ***Vice head | July 2017 – June 2023***
-- Be responsible for ensuring the training quality according to AUN-QA standards at the program level.
-- Be responsible for teaching content, quality, and schedule in the program.
-- Manage the compilation of curriculum and reference materials.
-- Manage the research and innovation of teaching methods, students’ assessment methods. 
-- Work with foreign universities to map training programs and promote affiliate programs.
+- Ensure program quality aligned with AUN-QA standards.
+- Supervise teaching content, course scheduling, and quality assurance for the department.
+- Manage curriculum development and teaching method innovations.
+- Collaborate with foreign universities to map training programs and promote partnerships.
 
 **Vintech City, Vingroup, Vietnam**
 
 ***Program Manager | May 2019 – April 2020***
-- Develop action plans and budget plans for the SAP and Corporate Semester sponsorship program.
-- Identify, connect, and negotiate with co-sponsorship and partnership organizations (SAP-UA, NGS, Deloitte, Palo Alto, Practice Labs, Robusta, DS Lab – VIASM, etc.).
-- Collaborate with Vietnamese universities to promote sponsorship initiatives.  
+- Develop action and budget plans for SAP and Corporate Semester sponsorship programs.
+- Build co-sponsorship and partnership with organizations such as SAP-UA, Deloitte, Palo Alto and others.
 - Organize SAP and AI training programs, including train-the-trainer workshops and university training classes. 
-- Establish processes, procedures, regulations, and reporting systems for program management and provide support for internal training in project management.
+- Establish processes, procedures, regulations, and reporting systems for program management.
 
 ## Publications
-- “An incentive for risk taking: The case of banks in Asean 6.”, (with Minh Q. Le, Thanh T Ngo), 2019, Conferene on Econometrics and Statistical methods: applications in Economics and Finance, HCMC.
-- “Incorporating risk into technical efficiency via a semiparametric analysis: the case of ASEAN banks.” (with Minh Q. Le, Thanh T Ngo), 2018, Journal of Asian Business and Economic Studies.
-- “Incorporating risk into technical efficiency: the case of ASEAN banks.” (with Minh Q. Le, Thanh T Ngo), 2017, International Conference on Accounting and Finance (ICOAF) – Da Nang City.
-- “Do we need big banks in Vietnam? Evidence on Performance.” (with Minh Q. Le, Thanh T Ngo), 2016, Vietnam Economist Annual Meeting (VEAM) – Da Nang City.
+- **“An incentive for risk taking: The case of banks in Asean 6.”**, _(with Minh Q. Le, Thanh T Ngo)_, 2019, _Conferene on Econometrics and Statistical methods: applications in Economics and Finance, HCMC_.
+- **“Incorporating risk into technical efficiency via a semiparametric analysis: the case of ASEAN banks.”** _(with Minh Q. Le, Thanh T Ngo)_, 2018, _Journal of Asian Business and Economic Studies_.
+- **“Incorporating risk into technical efficiency: the case of ASEAN banks.”** _(with Minh Q. Le, Thanh T Ngo)_, 2017, _International Conference on Accounting and Finance (ICOAF) – Da Nang City_.
+- **“Do we need big banks in Vietnam? Evidence on Performance.”** _(with Minh Q. Le, Thanh T Ngo)_, 2016, _Vietnam Economist Annual Meeting (VEAM) – Da Nang City_.
 
 ## Education
-- **M.S., Applied Data Science** | _University of Canterbury, NZ_ | 2023-2024
-- **M.A., Financial Economics** | _The University of Sydney, Australia_ | 2011-2012
-- **Post Graduate Study Certificate, Applied Economics and Public Policy**, _Fulbright Economics Teaching Program, Vietnam_ (2007-2008)
-- B.A., International Business, Faculty of Economics, Vietnam National University (2001-2005)
+- **M.S., Applied Data Science**, _University of Canterbury, NZ_ | June 2023 - July 2024
+- **M.A., Financial Economics**, _The University of Sydney, Australia_ | February 2011 - July 2012
+- **Post Graduate Study Certificate, Applied Economics and Public Policy**, _Fulbright Economics Teaching Program, Vietnam_ | September 2007 - June 2008
+- **B.A., International Business**, _Faculty of Economics, Vietnam National University_ | September 2001 - July 2005
 
 ## Scholarships
 - **Australian Awards**: Covered stipend and tuition fees for English preparation and Master courses at the University of Sydney (2010 - 2012).
