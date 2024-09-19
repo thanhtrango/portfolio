@@ -48,18 +48,21 @@ Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](https://www.lin
 - Postgraduate Certificate, **Applied Economics and Public Policy**, _Fulbright Economics Teaching Program, Vietnam_ (2007 - 2008).
 - B.A., **International Business**, _Faculty of Economics, Vietnam National University_ (2001 - 2005).
 
-## Scholarships
-- **Australian Awards**: Covered stipend and tuition fees for English preparation and Master courses at the University of Sydney (2010 - 2012).
-- **Fulbright Economics Teaching Program**: Covered stipend and tuition fees for Postgraduate course (2007 - 2008).
+## References
+- Kurt Binh, CEO, Smartlog, Email: kurtbinh@gosmartlog.com, Tel: (+84)-917-429-999
+- Phi L. H. Truong, Former CEO, Vintech City, Email: phi@ibpvietnam.com, Tel: (+84)-919-234-583
 
 ## Publications
 - “An incentive for risk taking: The case of banks in Asean 6.”, _(with Minh Q. Le, Thanh T Ngo)_, 2019, _Conferene on Econometrics and Statistical methods: applications in Economics and Finance, HCMC_.
 - “Incorporating risk into technical efficiency via a semiparametric analysis: the case of ASEAN banks.” _(with Minh Q. Le, Thanh T Ngo)_, 2018, _Journal of Asian Business and Economic Studies_.
 - “Incorporating risk into technical efficiency: the case of ASEAN banks.” _(with Minh Q. Le, Thanh T Ngo)_, 2017, _International Conference on Accounting and Finance (ICOAF) – Da Nang City_.
 - “Do we need big banks in Vietnam? Evidence on Performance.” _(with Minh Q. Le, Thanh T Ngo)_, 2016, _Vietnam Economist Annual Meeting (VEAM) – Da Nang City_.
+  
+## Scholarships
+- **Australian Awards**: Covered stipend and tuition fees for English preparation and Master courses at the University of Sydney (2010 - 2012).
+- **Fulbright Economics Teaching Program**: Covered stipend and tuition fees for Postgraduate course (2007 - 2008).
 
-## References
-- Kurt Binh, CEO, Smartlog, Email: kurtbinh@gosmartlog.com, Tel: (+84)-917-429-999
-- Phi L. H. Truong, Former CEO, Vintech City, Email: phi@ibpvietnam.com, Tel: (+84)-919-234-583
-- Minh Q. Le, Market Risk Analyst, Shell Energy Australia, Email: , Tel:
+
+
+
 
