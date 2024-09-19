@@ -2,7 +2,7 @@
 
 Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](https://www.linkedin.com/in/thanh-tra-ngo-71a23b3b/)
 
-### Skills: R, Python, Excel
+### Skills: R, Python, Excel, Tableau
 
 ## Projects
 **Stock Performance and Portfolio Analysis (2014 - 2024)** | _Individual project | May 2024_
