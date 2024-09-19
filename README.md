@@ -1,6 +1,12 @@
 # Data Analyst
 • Avonhead, Christchurch • 022-560-7755 • Email: ngothanhtra@gmail.com • Linkedin: [Thanh Tra Ngo](https://www.linkedin.com/in/thanh-tra-ngo-71a23b3b/) • Portfolio: [Thanh Tra Ngo (Tracy)] (https://camellia912.github.io/portfolio/)
 
+[![github](https://cloud.githubusercontent.com/assets/17016297/18839843/0e06a67a-83d2-11e6-993a-b35a182500e0.png)][1]
+
+[1]: http://www.github.com/your_contact_info
+[2]: https://www.linkedin.com/in/your_contact_info
+[3]: https://www.facebook.com/your_contact_info
+
 ### Skills: R, Python, Excel
 
 ## Projects
