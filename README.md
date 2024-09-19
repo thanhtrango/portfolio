@@ -12,7 +12,7 @@
 **LEGO Product Trends and Market Dynamics Analysis** | _Group project with Zichen Zhou and Xin Lei | Jan 2024_
 - Merge and clean raw datasets from Rebrickable, Brickset and Kaggle using **R**, forming LEGO product, color, and secondary market datasets (1953 - 2022).
 - Analyze LEGO set complexity, theme evolution, and colour variety over time using **R**. 
-- Evaluate the performance of LEGO sets and themes in the secondary market based on Net Profit and Return on Investment (ROI) to assess their potential investments.
+- Evaluate the performance of LEGO sets and themes in the secondary market based on Net Profit and Return on Investment (ROI) to assess their potential investment.
 - Apply Random Forest, Gradient Boosting, and Linear Regression algorithms to predict LEGO resale prices.
 
 **Youth Crime Trends in New Zealand (2015 - 2022)** | _Individual project | Sep 2023_
