@@ -41,10 +41,10 @@
 - Establish processes, regulations and reporting systems for program management.
 
 ## Education
-- M.S., **Applied Data Science**, _University of Canterbury, New Zealand_ (2023 - 2024)
-- M.A., **Financial Economics**, _The University of Sydney, Australia_ (2011 - 2012)
-- Postgraduate Certificate, **Applied Economics and Public Policy**, _Fulbright Economics Teaching Program, Vietnam_ (2007 - 2008)
-- B.A., **International Business**, _Faculty of Economics, Vietnam National University_ (2001 - 2005)
+- M.S., **Applied Data Science**, _University of Canterbury, New Zealand_ (2023 - 2024).
+- M.A., **Financial Economics**, _The University of Sydney, Australia_ (2011 - 2012).
+- Postgraduate Certificate, **Applied Economics and Public Policy**, _Fulbright Economics Teaching Program, Vietnam_ (2007 - 2008).
+- B.A., **International Business**, _Faculty of Economics, Vietnam National University_ (2001 - 2005).
 
 ## Scholarships
 - **Australian Awards**: Covered stipend and tuition fees for English preparation and Master courses at the University of Sydney (2010 - 2012).
