@@ -59,5 +59,5 @@
 ## References
 - Kurt Binh, CEO, Smartlog, Email: kurtbinh@gosmartlog.com, Tel: (+84)-917-429-999
 - Phi L. H. Truong, Former CEO, Vintech City, Email: phi@ibpvietnam.com, Tel: (+84)-919-234-583
-- Minh Q. Le, Market Risk Anakyst, Shell Energy Australia, Email: , Tel:
+- Minh Q. Le, Market Risk Analyst, Shell Energy Australia, Email: , Tel:
 
