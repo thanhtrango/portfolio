@@ -3,13 +3,13 @@
 ### Skills: R, Python, Excel
 
 ## Projects
-**Stock Performance and Portfolio Analysis** | _Individual project | May 2024_
+**Stock Performance and Portfolio Analysis (2014 - 2024)** | _Individual project | May 2024_
 - Sort and identify the top ten stocks by market capitalization on the New Zealand Stock Exchange using Excel.
 - Extract historical stock prices using *yfinance* package in Python.
 - Create interactive stock price charts over time using *matplotlib*, *plotly*, and *cufflinks* in Python.
 - Analyze individual stock performance and identify the optimal portfolio for investors using *Pandas* and *NumPy* in Python.
 
-**LEGO Product Trends and Market Dynamics Analysis** | _Group project with Zichen Zhou and Xin Lei | Jan 2024_
+**LEGO Product Trends and Market Dynamics Analysis (1953 - 2022)** | _Group project with Zichen Zhou and Xin Lei | Jan 2024_
 - Merge and clean raw datasets from Rebrickable, Brickset and Kaggle using R, forming LEGO product, color, and secondary market datasets (1953 - 2022).
 - Analyze LEGO set complexity, theme evolution, and colour variety over time using R. 
 - Evaluate the performance of LEGO sets and themes in the secondary market based on Net Profit and Return on Investment (ROI) to assess their potential investment.
