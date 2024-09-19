@@ -20,13 +20,13 @@
 - Examine youth offender profiles by gender, ethnicity and and crime behavior using R.
 
 ## Work Experience
-**Smartlog Supply Chain Solutions Corporation | Vietnam**
+**Smartlog Supply Chain Solutions Corporation, Vietnam**
 
 ***Logistics System And Solution Consultant | Jul 2024 - Present*** 
 - Design and deliver consulting services for logistics digital transformation projects.
 - Contribute to process improvements in Transportation Management Software (TMS) and Warehouse Management Software (WMS).
 
-**University of Economics and Law | Vietnam**
+**University of Economics and Law, Vietnam**
 
 ***Lecturer | Sep 2005 – Jun 2023***
 - Teach courses in Econometrics; Project Appraisal & Management and Cross-Cultural Management.
