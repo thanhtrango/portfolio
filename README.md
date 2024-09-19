@@ -38,7 +38,6 @@
 - Collaborate with foreign universities to map training programs and promote partnerships.
 
 **Vintech City, Vingroup, Vietnam**
-
 ***Program Manager | May 2019 – April 2020***
 - Develop action and budget plans for SAP and Corporate Semester sponsorship programs.
 - Build co-sponsorship and partnership with organizations such as SAP-UA, Deloitte, Palo Alto and others.
@@ -52,10 +51,10 @@
 - **“Do we need big banks in Vietnam? Evidence on Performance.”** _(with Minh Q. Le, Thanh T Ngo)_, 2016, _Vietnam Economist Annual Meeting (VEAM) – Da Nang City_.
 
 ## Education
-- **M.S., Applied Data Science**, _University of Canterbury, NZ_ | June 2023 - July 2024
-- **M.A., Financial Economics**, _The University of Sydney, Australia_ | February 2011 - July 2012
-- **Post Graduate Study Certificate, Applied Economics and Public Policy**, _Fulbright Economics Teaching Program, Vietnam_ | September 2007 - June 2008
-- **B.A., International Business**, _Faculty of Economics, Vietnam National University_ | September 2001 - July 2005
+- **M.S., Applied Data Science**, _University of Canterbury, NZ_, (2023 - 2024)
+- **M.A., Financial Economics**, _The University of Sydney, Australia_, (2011 - 2012)
+- **Post Graduate Study Certificate, Applied Economics and Public Policy**, _Fulbright Economics Teaching Program, Vietnam_, (2007 - 2008)
+- **B.A., International Business**, _Faculty of Economics, Vietnam National University_, (2001 - 2005)
 
 ## Scholarships
 - **Australian Awards**: Covered stipend and tuition fees for English preparation and Master courses at the University of Sydney (2010 - 2012).
