@@ -41,7 +41,7 @@
 - Establish processes, regulations and reporting systems for program management.
 
 ## Education
-- **M.S., Applied Data Science**, _University of Canterbury, NZ_ (2023 - 2024)
+- **M.S., Applied Data Science**, _University of Canterbury, New Zealand_ (2023 - 2024)
 - **M.A., Financial Economics**, _The University of Sydney, Australia_ (2011 - 2012)
 - **Post Graduate Study Certificate, Applied Economics and Public Policy**, _Fulbright Economics Teaching Program, Vietnam_ (2007 - 2008)
 - **B.A., International Business**, _Faculty of Economics, Vietnam National University_ (2001 - 2005)
