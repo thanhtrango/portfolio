@@ -5,6 +5,10 @@
 &nbsp;
 [![GitHub](https://i.sstatic.net/tskMh.png) GitHub]([https://github.com/](https://camellia912.github.io/portfolio/))
 
+[![Linkedin](https://i.sstatic.net/gVE0j.png) LinkedIn](https://www.linkedin.com/)
+&nbsp;
+[![GitHub](https://i.sstatic.net/tskMh.png) GitHub](https://github.com/)
+
 
 
 ### Skills: R, Python, Excel
