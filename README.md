@@ -1,5 +1,5 @@
 # Data Analyst
-Christchurch • (+64) 022-560-7755 • Email: ngothanhtra@gmail.com • Linkedin: https://www.linkedin.com/in/thanh-tra-ngo-71a23b3b/ • Portfolio: https://camellia912.github.io/portfolio/
+• Avonhead, Christchurch • (+64) 022-560-7755 • Email: ngothanhtra@gmail.com • Linkedin: https://www.linkedin.com/in/thanh-tra-ngo-71a23b3b/ • Portfolio: https://camellia912.github.io/portfolio/
 
 ### Skills: R, Python, Excel
 
