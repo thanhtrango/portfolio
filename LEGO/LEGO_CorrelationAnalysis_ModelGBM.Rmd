@@ -1,0 +1,903 @@
+---
+title: "LEGO_v3"
+author: "Xin LEI"
+date: "2024-02-06"
+output: html_document
+---
+
+```{r setup}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+```{r package}
+# Install the required packages
+packages <- c("ggplot2", "reshape2", "patchwork", "cowplot", "dplyr", "gbm", "caret", "Metrics")
+
+# Check that each package is installed, and if not, install it
+for(pkg in packages) {
+  if (!require(pkg, character.only = TRUE)) {
+    install.packages(pkg, dependencies = TRUE)
+    library(pkg, character.only = TRUE)
+  }
+}
+```
+
+
+## Specific Theme Correlation analysis
+
+### with 9000 resale_price_new
+
+8 continuous variables
+
+```{r map01, fig.width=13, fig.height=9}
+library(ggplot2)
+library(reshape2)
+
+# Load the data
+data <- read.csv("theme_data_model.csv")
+
+# Selecting relevant columns
+selected_columns <- c("lifecycle_duration", "days_since_launch", "parts_count", "rating", "retail_price", "minifigures_count", "resale_price_used", "resale_price_new")
+correlation_data <- data[, selected_columns]
+
+# Calculating the correlation matrix
+cor_matrix <- cor(correlation_data, use = "complete.obs")
+
+# Melting the correlation matrix for ggplot2
+melted_cor_matrix <- melt(cor_matrix)
+
+# Renaming Var1 and Var2 with custom names
+melted_cor_matrix$Var1 <- factor(melted_cor_matrix$Var1,
+                                 levels = c("lifecycle_duration", "days_since_launch", "parts_count", "rating", "retail_price", "minifigures_count", "resale_price_used", "resale_price_new"),
+                                 labels = c("Lifecycle Duration (Days)", "Days Since Launch (Days)", "Number of Parts", "Rating", "Retail Price (USD)", "Number of Minifigures", "Used Sets Resale Price(USD)", "New Sets Resale Price (USD)"))
+
+melted_cor_matrix$Var2 <- factor(melted_cor_matrix$Var2,
+                                 levels = c("lifecycle_duration", "days_since_launch", "parts_count", "rating", "retail_price", "minifigures_count", "resale_price_used", "resale_price_new"),
+                                 labels = c("Lifecycle Duration (Days)", "Days Since Launch (Days)", "Number of Parts", "Rating", "Retail Price (USD)", "Number of Minifigures", "Used Sets Resale Price(USD)", "New Sets Resale Price (USD)"))
+
+# Creating the heatmap with correlation coefficients
+heatmap_plot <- ggplot(melted_cor_matrix, aes(Var1, Var2, fill = value)) +
+  geom_tile() +
+  geom_text(aes(label = sprintf("%.2f", value)), vjust = 1, size = 6) + 
+  scale_fill_gradient(low = "white", high = "skyblue") + 
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1, size = 18), 
+    axis.text.y = element_text(size = 18), 
+    plot.title = element_text(hjust = 0.5, size = 20), 
+    legend.text = element_text(size = 18) , legend.title = element_text(size = 18)
+    ) +
+  labs(x = "", y = "", title = "Correlation Heatmap of LEGO Product Variables")
+
+# Display heat map
+print(heatmap_plot)
+
+# Use ggsave to save the heat map
+ggsave("heatmap_theme_v3_with_9000.png", plot = heatmap_plot, width = 13, height = 9, dpi = 300)
+```
+
+Put 6 correlations on a graph
+
+```{r pic01}
+library(ggplot2)
+library(patchwork)
+library(cowplot)
+
+#png("Correlation_theme_v3_with_9000.png", width = 2400, height = 1600, res = 300)
+
+# read data
+data <- read.csv("theme_data_model.csv")
+
+# lifecycle_duration and resale_price_new
+cor.test_result <- cor.test(data$lifecycle_duration, data$resale_price_new)
+correlation_coefficient <- cor.test_result$estimate
+p_value <- cor.test_result$p.value
+
+
+plot1 <- ggplot(data, aes(x = lifecycle_duration, y = resale_price_new)) +
+  geom_point(color = "#F08080", alpha = 0.5) +
+  geom_smooth(method = "lm", color = "black", fill = "grey", level = 0.95, alpha = 0.2) +
+  labs(x = "Lifecycle Duration (Days)", y = "Resale Price (USD)") +
+  annotate("text", x = 0, y = 1200, label = sprintf("R = %.2f\nP-value < 2.2e-16", cor.test_result$estimate), 
+            hjust = 0, vjust = 1.1, color = "black", size = 2.5) +
+  theme(
+    panel.background = element_rect(fill = "white", colour = NA), 
+    panel.grid = element_blank(), 
+    axis.ticks = element_line(color = "black"),
+    axis.line = element_line(color = "black"),
+  ) + scale_y_continuous(breaks = seq(0, 1200, by = 200), limits = c(0, 1200))
+
+
+# days_since_launch and resale_price_new
+cor.test_result <- cor.test(data$days_since_launch, data$resale_price_new)
+correlation_coefficient <- cor.test_result$estimate
+p_value <- cor.test_result$p.value
+
+plot2 <- ggplot(data, aes(x = days_since_launch, y = resale_price_new)) +
+  geom_point(color = "#FFAC1C", alpha = 0.5) +  
+  geom_smooth(method = "lm", color = "black", fill = "grey") +
+  labs(x = "Days Since Launch (Days)", y = "Resale Price (USD)") +
+  annotate("text", x = 0, y = 1200, label = sprintf("R = %.2f\nP-value < 2.2e-16", cor.test_result$estimate), 
+            hjust = 0, vjust = 1.1, color = "black", size = 2.5)+
+  theme(
+    panel.background = element_rect(fill = "white", colour = NA), 
+    panel.grid = element_blank(), 
+    axis.ticks.x = element_line(color = "black"),
+    axis.ticks.y = element_blank(),
+    axis.line.x = element_line(color = "black"),
+    axis.text.y = element_blank(), 
+    axis.title.y = element_blank()
+  ) + scale_y_continuous(breaks = seq(0, 1200, by = 200), limits = c(0, 1200))
+
+
+# parts_count and resale_price_new
+cor.test_result <- cor.test(data$parts_count, data$resale_price_new)
+correlation_coefficient <- cor.test_result$estimate
+p_value <- cor.test_result$p.value
+
+plot3 <- ggplot(data, aes(x = parts_count, y = resale_price_new)) +
+  geom_point(color = "#FFD700", alpha = 0.5) +  
+  geom_smooth(method = "lm", color = "black", fill = "grey") +
+  labs(x = "Number of Parts", y = "Resale Price (USD)") +
+  annotate("text", x = 0, y = 1200, label = sprintf("R = %.2f\nP-value %s", cor.test_result$estimate, 
+            ifelse(cor.test_result$p.value < .Machine$double.eps, sprintf("< %.2e", .Machine$double.eps), sprintf("= %.2f", cor.test_result$p.value))), 
+            hjust = 0, vjust = 1.1, color = "black", size = 2.5)+
+  theme(
+    panel.background = element_rect(fill = "white", colour = NA), 
+    panel.grid = element_blank(), 
+    axis.ticks.x = element_line(color = "black"),
+    axis.ticks.y = element_blank(),
+    axis.line.x = element_line(color = "black"),
+    axis.text.y = element_blank(), 
+    axis.title.y = element_blank()
+  ) + scale_y_continuous(breaks = seq(0, 1200, by = 200), limits = c(0, 1200))
+
+# rating and resale_price_new
+cor.test_result <- cor.test(data$rating, data$resale_price_new)
+correlation_coefficient <- cor.test_result$estimate
+p_value <- cor.test_result$p.value
+
+plot4 <- ggplot(data, aes(x = rating, y = resale_price_new)) +
+  geom_point(color = "#008B8B", alpha = 0.5) +  
+  geom_smooth(method = "lm", color = "black", fill = "grey") +
+  labs(x = "Rating", y = "Resale Price (USD)") +
+  annotate("text", x = 0, y = 1200, label = sprintf("R = %.2f\nP-value %s", cor.test_result$estimate, 
+            ifelse(cor.test_result$p.value < .Machine$double.eps, sprintf("< %.2e", .Machine$double.eps), sprintf("= %.2f", cor.test_result$p.value))), 
+            hjust = 0, vjust = 1.1, color = "black", size = 2.5)+
+  theme(
+    panel.background = element_rect(fill = "white", colour = NA), 
+    panel.grid = element_blank(), 
+    axis.ticks = element_line(color = "black"),
+    axis.line = element_line(color = "black"),
+  ) + scale_y_continuous(breaks = seq(0, 1200, by = 200), limits = c(0, 1200))
+
+
+# retail_price and resale_price_new
+cor.test_result <- cor.test(data$retail_price, data$resale_price_new)
+correlation_coefficient <- cor.test_result$estimate
+p_value <- cor.test_result$p.value
+
+plot5 <- ggplot(data, aes(x = retail_price, y = resale_price_new)) +
+  geom_point(color = "#808000", alpha = 0.5) +  
+  geom_smooth(method = "lm", color = "black", fill = "grey") +
+  labs(x = "Retail Price (USD)", y = "Resale Price (USD)") +
+  annotate("text", x = 0, y = 1200, label = sprintf("R = %.2f\nP-value %s", cor.test_result$estimate, 
+            ifelse(cor.test_result$p.value < .Machine$double.eps, sprintf("< %.2e", .Machine$double.eps), sprintf("= %.2f", cor.test_result$p.value))), 
+            hjust = 0, vjust = 1.1, color = "black", size = 2.5)+
+  theme(
+    panel.background = element_rect(fill = "white", colour = NA), 
+    panel.grid = element_blank(), 
+    axis.ticks.x = element_line(color = "black"),
+    axis.ticks.y = element_blank(),
+    axis.line.x = element_line(color = "black"),
+    axis.text.y = element_blank(), 
+    axis.title.y = element_blank()
+  ) + scale_y_continuous(breaks = seq(0, 1200, by = 200), limits = c(0, 1200))
+
+
+# minifigures_count and resale_price_new
+cor.test_result <- cor.test(data$minifigures_count, data$resale_price_new)
+correlation_coefficient <- cor.test_result$estimate
+p_value <- cor.test_result$p.value
+
+plot6 <- ggplot(data, aes(x = minifigures_count, y = resale_price_new)) +
+  geom_point(color = "plum4", alpha = 0.5) +  
+  geom_smooth(method = "lm", color = "black", fill = "grey") +
+  labs(x = "Number of Minifigures", y = "Resale Price (USD)") +
+  annotate("text", x = 0, y = 1200, label = sprintf("R = %.2f\nP-value %s", cor.test_result$estimate, 
+            ifelse(cor.test_result$p.value < .Machine$double.eps, sprintf("< %.2e", .Machine$double.eps), sprintf("= %.2f", cor.test_result$p.value))), 
+            hjust = 0, vjust = 1.1, color = "black", size = 2.5)+
+  theme(
+    panel.background = element_rect(fill = "white", colour = NA), 
+    panel.grid = element_blank(), 
+    axis.ticks.x = element_line(color = "black"),
+    axis.ticks.y = element_blank(),
+    axis.line.x = element_line(color = "black"),
+    axis.text.y = element_blank(), 
+    axis.title.y = element_blank()
+  ) + scale_y_continuous(breaks = seq(0, 1200, by = 200), limits = c(0, 1200))
+
+
+# Combine charts using patchwork
+combined_plot <- plot1 + plot2 + plot3 + plot4 + plot5 + plot6 + 
+  plot_layout(ncol = 3, nrow = 2)  
+
+# Add title
+combined_plot <- combined_plot + 
+  plot_annotation(
+    title = "Correlation between Resale Price and Product Variables of LEGO Sets",
+    theme = theme(
+      plot.title = element_text(hjust = 0.5)
+    )
+  )
+
+# Draw final chart
+print(combined_plot)
+
+#dev.off()
+```
+
+resale_price_new and resale_price_used
+
+```{r fig01}
+library(ggplot2)
+
+# Read the data from CSV
+data <- read.csv("theme_data_model.csv")
+
+# Correlation analysis
+cor.test_result <- cor.test(data$resale_price_new, data$resale_price_used)
+correlation_coefficient <- cor.test_result$estimate
+p_value <- cor.test_result$p.value
+
+# Create the plot with points and regression line in pale yellow and grey confidence interval
+plot <- ggplot(data, aes(x = resale_price_new, y = resale_price_used)) +
+  geom_point(color = "#4169E1", alpha = 0.5) +  
+  geom_smooth(method = "lm", color = "black", fill = "grey") +
+  labs(title = "Correlation between Resale Prices of Used and Unopened Products", x = "Unopened Product Resale Price (USD)", y = "Used Product Resale Price (USD)") +
+  annotate("text", x = 0, y = 2000, label = sprintf("R = %.2f\nP-value %s", cor.test_result$estimate, 
+            ifelse(cor.test_result$p.value < .Machine$double.eps, sprintf("< %.2e", .Machine$double.eps), sprintf("= %.2f", cor.test_result$p.value))), 
+            hjust = 0, vjust = 1.1, color = "black")+
+  theme(
+    panel.background = element_rect(fill = "white", colour = NA), 
+    panel.grid = element_blank(), 
+    plot.title = element_text(hjust = 0.5),
+    axis.ticks = element_line(color = "black"),
+    axis.line = element_line(color = "black")
+  )
+
+# Show the plot
+print(plot)
+
+# Save the plot as an image
+ggsave("new_used_theme_v3_with_9000.png", plot, width = 10, height = 8, dpi = 300)
+```
+
+is_starwars and resale_price_new
+
+```{r fig02_1}
+
+# Read data
+data <- read.csv("theme_data_model.csv")
+
+# Check the data structure to make sure is_starwars is a factor type and resale_price_new is a numeric type
+str(data)
+
+# Convert is_starwars to a factor
+data$is_starwars <- as.factor(data$is_starwars)
+
+# ANOVA was used for correlation analysis
+anova_result <- aov(resale_price_new ~ is_starwars, data = data)
+
+# Displays an overview of the ANOVA results
+summary(anova_result)
+```
+
+is_from_retired_theme and resale_price_new
+
+
+```{r fig02_2}
+
+# Read data
+data <- read.csv("theme_data_model.csv")
+
+# Check the data structure to ensure that is_from_retired_theme is a factor type and resale_price_new is a numeric type
+str(data)
+
+# Convert is_from_retired_theme to a factor
+data$is_from_retired_theme <- as.factor(data$is_from_retired_theme)
+
+# ANOVA was used for correlation analysis
+anova_result <- aov(resale_price_new ~ is_from_retired_theme, data = data)
+
+# Displays an overview of the ANOVA results
+summary(anova_result)
+```
+
+### without 9000 resale_price_new
+
+
+```{r data01}
+library(dplyr)
+
+# Read data
+data <- read.csv("theme_data_model.csv")
+
+# Filter out data whose resale_price_new value is less than 9000
+filtered_data <- data %>% filter(resale_price_new < 9000)
+
+# Save filtered data to a new file
+write.csv(filtered_data, "theme_data_model_without_9000.csv", row.names = FALSE)
+```
+
+
+8 continuous variables
+
+```{r map02, fig.width=13, fig.height=9}
+library(ggplot2)
+library(reshape2)
+
+# Load the data
+data <- read.csv("theme_data_model_without_9000.csv")
+
+# Selecting relevant columns
+selected_columns <- c("lifecycle_duration", "days_since_launch", "parts_count", "rating", "retail_price", "minifigures_count", "resale_price_used", "resale_price_new")
+correlation_data <- data[, selected_columns]
+
+# Calculating the correlation matrix
+cor_matrix <- cor(correlation_data, use = "complete.obs")
+
+# Melting the correlation matrix for ggplot2
+melted_cor_matrix <- melt(cor_matrix)
+
+# Renaming Var1 and Var2 with custom names
+melted_cor_matrix$Var1 <- factor(melted_cor_matrix$Var1,
+                                 levels = c("lifecycle_duration", "days_since_launch", "parts_count", "rating", "retail_price", "minifigures_count", "resale_price_used", "resale_price_new"),
+                                 labels = c("Lifecycle Duration (Days)", "Days Since Launch (Days)", "Number of Parts", "Rating", "Retail Price (USD)", "Number of Minifigures", "Used Sets Resale Price(USD)", "New Sets Resale Price (USD)"))
+
+melted_cor_matrix$Var2 <- factor(melted_cor_matrix$Var2,
+                                 levels = c("lifecycle_duration", "days_since_launch", "parts_count", "rating", "retail_price", "minifigures_count", "resale_price_used", "resale_price_new"),
+                                 labels = c("Lifecycle Duration (Days)", "Days Since Launch (Days)", "Number of Parts", "Rating", "Retail Price (USD)", "Number of Minifigures", "Used Sets Resale Price(USD)", "New Sets Resale Price (USD)"))
+
+# Creating the heatmap with correlation coefficients
+heatmap_plot <- ggplot(melted_cor_matrix, aes(Var1, Var2, fill = value)) +
+  geom_tile() +
+  geom_text(aes(label = sprintf("%.2f", value)), vjust = 1, size = 6) + 
+  scale_fill_gradient(low = "white", high = "skyblue") + 
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1, size = 18), 
+    axis.text.y = element_text(size = 18), 
+    plot.title = element_text(hjust = 0.5, size = 20), 
+    legend.text = element_text(size = 18) , legend.title = element_text(size = 18)
+    ) +
+  labs(x = "", y = "", title = "Correlation Heatmap of LEGO Product Variables")
+
+# Display heat map
+print(heatmap_plot)
+
+# Use ggsave to save the heat map
+ggsave("heatmap_theme_v3_without_9000.png", plot = heatmap_plot, width = 12, height = 8, dpi = 300)
+```
+
+Put 6 correlations on a graph
+
+```{r pic02}
+library(ggplot2)
+library(patchwork)
+library(cowplot)
+
+#png("Correlation_theme_v3_without_9000.png", width = 2400, height = 1600, res = 300)
+
+# Read data
+data <- read.csv("theme_data_model_without_9000.csv")
+
+# lifecycle_duration and resale_price_new
+cor.test_result <- cor.test(data$lifecycle_duration, data$resale_price_new)
+correlation_coefficient <- cor.test_result$estimate
+p_value <- cor.test_result$p.value
+
+plot1 <- ggplot(data, aes(x = lifecycle_duration, y = resale_price_new)) +
+  geom_point(color = "#F08080", alpha = 0.5) +
+  geom_smooth(method = "lm", color = "black", fill = "grey", level = 0.95, alpha = 0.2) +
+  labs(x = "Lifecycle Duration (Days)", y = "Resale Price (USD)") +
+  annotate("text", x = 0, y = 1200, label = sprintf("R = %.2f\nP-value < 2.2e-16", cor.test_result$estimate), 
+            hjust = 0, vjust = 1.1, color = "black", size = 2.5)+
+  theme(
+    panel.background = element_rect(fill = "white", colour = NA), 
+    panel.grid = element_blank(), 
+    axis.ticks = element_line(color = "black"),
+    axis.line = element_line(color = "black"),
+  ) + scale_y_continuous(breaks = seq(0, 1200, by = 200), limits = c(0, 1200))
+
+# days_since_launch and resale_price_new
+cor.test_result <- cor.test(data$days_since_launch, data$resale_price_new)
+correlation_coefficient <- cor.test_result$estimate
+p_value <- cor.test_result$p.value
+
+plot2 <- ggplot(data, aes(x = days_since_launch, y = resale_price_new)) +
+  geom_point(color = "#FFAC1C", alpha = 0.5) +  
+  geom_smooth(method = "lm", color = "black", fill = "grey") +
+  labs(x = "Days Since Launch (Days)", y = "Resale Price (USD)") +
+  annotate("text", x = 0, y = 1200, label = sprintf("R = %.2f\nP-value < 2.2e-16", cor.test_result$estimate), 
+            hjust = 0, vjust = 1.1, color = "black", size = 2.5)+
+  theme(
+    panel.background = element_rect(fill = "white", colour = NA), 
+    panel.grid = element_blank(), 
+    axis.ticks.x = element_line(color = "black"),
+    axis.ticks.y = element_blank(),
+    axis.line.x = element_line(color = "black"),
+    axis.text.y = element_blank(), 
+    axis.title.y = element_blank()
+  ) + scale_y_continuous(breaks = seq(0, 1200, by = 200), limits = c(0, 1200))
+
+
+# parts_count and resale_price_new
+cor.test_result <- cor.test(data$parts_count, data$resale_price_new)
+correlation_coefficient <- cor.test_result$estimate
+p_value <- cor.test_result$p.value
+
+plot3 <- ggplot(data, aes(x = parts_count, y = resale_price_new)) +
+  geom_point(color = "#FFD700", alpha = 0.5) +  
+  geom_smooth(method = "lm", color = "black", fill = "grey") +
+  labs(x = "Number of Parts", y = "Resale Price (USD)") +
+  annotate("text", x = 0, y = 1200, label = sprintf("R = %.2f\nP-value %s", cor.test_result$estimate, 
+            ifelse(cor.test_result$p.value < .Machine$double.eps, sprintf("< %.2e", .Machine$double.eps), sprintf("= %.2f", cor.test_result$p.value))), 
+            hjust = 0, vjust = 1.1, color = "black", size = 2.5)+
+  theme(
+    panel.background = element_rect(fill = "white", colour = NA), 
+    panel.grid = element_blank(), 
+    axis.ticks.x = element_line(color = "black"),
+    axis.ticks.y = element_blank(),
+    axis.line.x = element_line(color = "black"),
+    axis.text.y = element_blank(), 
+    axis.title.y = element_blank()
+  ) + scale_y_continuous(breaks = seq(0, 1200, by = 200), limits = c(0, 1200))
+
+# rating and resale_price_new
+cor.test_result <- cor.test(data$rating, data$resale_price_new)
+correlation_coefficient <- cor.test_result$estimate
+p_value <- cor.test_result$p.value
+
+plot4 <- ggplot(data, aes(x = rating, y = resale_price_new)) +
+  geom_point(color = "#008B8B", alpha = 0.5) +  
+  geom_smooth(method = "lm", color = "black", fill = "grey") +
+  labs(x = "Rating", y = "Resale Price (USD)") +
+  annotate("text", x = 0, y = 1200, label = sprintf("R = %.2f\nP-value %s", cor.test_result$estimate, 
+            ifelse(cor.test_result$p.value < .Machine$double.eps, sprintf("< %.2e", .Machine$double.eps), sprintf("= %.2f", cor.test_result$p.value))), 
+            hjust = 0, vjust = 1.1, color = "black", size = 2.5)+
+  theme(
+    panel.background = element_rect(fill = "white", colour = NA), 
+    panel.grid = element_blank(), 
+    axis.ticks = element_line(color = "black"),
+    axis.line = element_line(color = "black"),
+  ) + scale_y_continuous(breaks = seq(0, 1200, by = 200), limits = c(0, 1200))
+
+
+# retail_price and resale_price_new
+cor.test_result <- cor.test(data$retail_price, data$resale_price_new)
+correlation_coefficient <- cor.test_result$estimate
+p_value <- cor.test_result$p.value
+
+plot5 <- ggplot(data, aes(x = retail_price, y = resale_price_new)) +
+  geom_point(color = "#808000", alpha = 0.5) +  
+  geom_smooth(method = "lm", color = "black", fill = "grey") +
+  labs(x = "Retail Price (USD)", y = "Resale Price (USD)") +
+  annotate("text", x = 0, y = 1200, label = sprintf("R = %.2f\nP-value %s", cor.test_result$estimate, 
+            ifelse(cor.test_result$p.value < .Machine$double.eps, sprintf("< %.2e", .Machine$double.eps), sprintf("= %.2f", cor.test_result$p.value))), 
+            hjust = 0, vjust = 1.1, color = "black", size = 2.5)+
+  theme(
+    panel.background = element_rect(fill = "white", colour = NA), 
+    panel.grid = element_blank(), 
+    axis.ticks.x = element_line(color = "black"),
+    axis.ticks.y = element_blank(),
+    axis.line.x = element_line(color = "black"),
+    axis.text.y = element_blank(), 
+    axis.title.y = element_blank()
+  ) + scale_y_continuous(breaks = seq(0, 1200, by = 200), limits = c(0, 1200))
+
+
+# minifigures_count and resale_price_new
+cor.test_result <- cor.test(data$minifigures_count, data$resale_price_new)
+correlation_coefficient <- cor.test_result$estimate
+p_value <- cor.test_result$p.value
+
+plot6 <- ggplot(data, aes(x = minifigures_count, y = resale_price_new)) +
+  geom_point(color = "plum4", alpha = 0.5) +  
+  geom_smooth(method = "lm", color = "black", fill = "grey") +
+  labs(x = "Number of Minifigures", y = "Resale Price (USD)") +
+  annotate("text", x = 0, y = 1200, label = sprintf("R = %.2f\nP-value %s", cor.test_result$estimate, 
+            ifelse(cor.test_result$p.value < .Machine$double.eps, sprintf("< %.2e", .Machine$double.eps), sprintf("= %.2f", cor.test_result$p.value))), 
+            hjust = 0, vjust = 1.1, color = "black", size = 2.5)+
+  theme(
+    panel.background = element_rect(fill = "white", colour = NA), 
+    panel.grid = element_blank(), 
+    axis.ticks.x = element_line(color = "black"),
+    axis.ticks.y = element_blank(),
+    axis.line.x = element_line(color = "black"),
+    axis.text.y = element_blank(), 
+    axis.title.y = element_blank()
+  ) + scale_y_continuous(breaks = seq(0, 1200, by = 200), limits = c(0, 1200))
+
+
+# Combine charts using patchwork
+combined_plot <- plot1 + plot2 + plot3 + plot4 + plot5 + plot6 + 
+  plot_layout(ncol = 3, nrow = 2)  
+
+# Add title
+combined_plot <- combined_plot + 
+  plot_annotation(
+    title = "Correlation between Resale Price and Product Variables of LEGO Sets",
+    theme = theme(
+      plot.title = element_text(hjust = 0.5)
+    )
+  )
+
+# Draw final chart
+print(combined_plot)
+
+#dev.off()
+```
+
+resale_price_new and resale_price_used
+
+```{r fig03}
+library(ggplot2)
+
+# Read the data from CSV
+data <- read.csv("theme_data_model_without_9000.csv")
+
+# Correlation analysis
+cor.test_result <- cor.test(data$resale_price_new, data$resale_price_used)
+correlation_coefficient <- cor.test_result$estimate
+p_value <- cor.test_result$p.value
+
+# Create the plot with points and regression line in pale yellow and grey confidence interval
+plot <- ggplot(data, aes(x = resale_price_new, y = resale_price_used)) +
+  geom_point(color = "#4169E1", alpha = 0.5) +  
+  geom_smooth(method = "lm", color = "black", fill = "grey") +
+  labs(title = "Correlation between Resale Prices of Used and Unopened Products", x = "Unopened Product Resale Price (USD)", y = "Used Product Resale Price (USD)") +
+  annotate("text", x = 0, y = 1000, label = sprintf("R = %.2f\nP-value %s", cor.test_result$estimate, 
+            ifelse(cor.test_result$p.value < .Machine$double.eps, sprintf("< %.2e", .Machine$double.eps), sprintf("= %.2f", cor.test_result$p.value))), 
+            hjust = 0, vjust = 1.1, color = "black")+
+  theme(
+    panel.background = element_rect(fill = "white", colour = NA), 
+    panel.grid = element_blank(), 
+    plot.title = element_text(hjust = 0.5),
+    axis.ticks = element_line(color = "black"),
+    axis.line = element_line(color = "black")
+  )
+
+# Show the plot
+print(plot)
+
+# Save the plot as an image
+ggsave("new_used_theme_v3_without_9000.png", plot, width = 10, height = 8, dpi = 300)
+```
+
+is_starwars and resale_price_new
+
+```{r fig04_1}
+
+# Read data
+data <- read.csv("theme_data_model_without_9000.csv")
+
+# Check the data structure to make sure is_starwars is a factor type and resale_price_new is a numeric type
+str(data)
+
+# Convert is_starwars to a factor
+data$is_starwars <- as.factor(data$is_starwars)
+
+# ANOVA was used for correlation analysis
+anova_result <- aov(resale_price_new ~ is_starwars, data = data)
+
+# Displays an overview of the ANOVA results
+summary(anova_result)
+```
+
+is_from_retired_theme and resale_price_new
+
+
+```{r fig04_2}
+
+# Read data
+data <- read.csv("theme_data_model_without_9000.csv")
+
+# Check the data structure to ensure that is_from_retired_theme is a factor type and resale_price_new is a numeric type
+str(data)
+
+# Convert is_from_retired_theme to a factor
+data$is_from_retired_theme <- as.factor(data$is_from_retired_theme)
+
+# ANOVA was used for correlation analysis
+anova_result <- aov(resale_price_new ~ is_from_retired_theme, data = data)
+
+# Displays an overview of the ANOVA results
+summary(anova_result)
+```
+
+
+## Price prediction model 
+
+###GBM (data without 9000 of resale_price_new )
+
+Remove the resale_price_used column
+
+```{r data02}
+library(dplyr)
+
+# Read data
+data <- read.csv("theme_data_model_without_9000.csv")
+
+# Remove the 'resale_price_used' column
+data <- select(data, -resale_price_used)
+
+
+# Save the processed data to a new file
+write.csv(data, "updated_theme_data_model_without_9000.csv", row.names = FALSE)
+```
+
+Raw data 
+
+```{r model_v3_1, fig.width=13, fig.height=9}
+library(gbm)
+library(dplyr)
+library(caret)
+library(Metrics)
+
+# Read data
+data <- read.csv("final_model_data.csv")
+
+# Converts categorical variables to factor types
+data$is_starwars <- as.factor(data$is_starwars)
+data$is_from_retired_theme <- as.factor(data$is_from_retired_theme)
+
+# Set random seed
+set.seed(123)
+
+# Devide 80% train data and 20% test data
+rows <- nrow(data)
+shuffled_indices <- sample(1:rows, rows)
+train_size <- floor(0.8 * rows) # Ensure it's an integer
+train_indices <- shuffled_indices[1:train_size]         # 80% as train data
+test_indices <- shuffled_indices[(train_size + 1):rows] # 20% as test data
+
+train_data <- data[train_indices, ]
+test_data <- data[test_indices, ]
+
+#nrow(train_data)
+#nrow(test_data)
+
+# Parameter combination list
+params <- expand.grid(n_trees = c(100, 200, 300, 400, 500),
+                      interaction_depth = c(2, 3, 4),
+                      shrinkage = c(0.05, 0.1, 0.15))
+
+# Train the model and calculate the performance function
+train_and_evaluate <- function(train_data, n_trees, interaction_depth, shrinkage) {
+    model <- gbm(resale_price_new ~ ., data = train_data, distribution = "gaussian",
+                 n.trees = n_trees, interaction.depth = interaction_depth, shrinkage = shrinkage,
+                 cv.folds = 10, verbose = FALSE)
+    
+    predictions <- predict(model, train_data, n.trees = n_trees)
+    rmse_value <- rmse(train_data$resale_price_new, predictions)
+    r_square_value <- R2(train_data$resale_price_new, predictions)
+    
+    return(list(model = model, rmse = rmse_value, r_square = r_square_value))
+}
+
+# Iterate through parameter combinations and store the results
+results <- list()
+for(i in 1:nrow(params)) {
+    p <- params[i, ]
+    result <- train_and_evaluate(train_data, p$n_trees, p$interaction_depth, p$shrinkage)
+    results[[i]] <- list(params = p, rmse = result$rmse, r_square = result$r_square)
+    cat(sprintf("n_trees: %d, depth: %d, shrinkage: %.2f, RMSE: %.2f, R2: %.2f\n",
+                p$n_trees, p$interaction_depth, p$shrinkage, result$rmse, result$r_square))
+}
+
+# Find the best results
+best_rmse <- Inf
+best_params <- NULL
+best_r_square <- -Inf
+
+for(result in results) {
+    if(result$rmse < best_rmse) {
+        best_rmse <- result$rmse
+        best_params <- result$params
+        best_r_square <- result$r_square
+    }
+}
+
+# Displays the best combination of parameters and their performance
+cat("Best Parameters:\n")
+print(best_params)
+cat(sprintf("Best RMSE: %.2f\n", best_rmse))
+cat(sprintf("Best R-square: %.2f\n", best_r_square))
+
+# Evaluate the model on the test data set, using the best parameters found
+best_n_trees <- best_params$n_trees
+best_interaction_depth <- best_params$interaction_depth
+best_shrinkage <- best_params$shrinkage
+
+best_model <- train_and_evaluate(train_data, best_n_trees, best_interaction_depth, best_shrinkage)$model
+predictions_test <- predict(best_model, test_data, n.trees = best_n_trees)
+rmse_test <- rmse(test_data$resale_price_new, predictions_test)
+r_square_test <- R2(test_data$resale_price_new, predictions_test)
+Correlation_test <- cor(test_data$resale_price_new, predictions_test)
+
+
+cat("RMSE on Test Set:", rmse_test, "\n")
+cat("R-square on Test Set:", r_square_test, "\n")
+cat("Correlation on Test Set:", Correlation_test, "\n")
+
+
+# Make predictions
+predictions_all <- predict(best_model, data, n.trees = best_n_trees)
+
+# Visual prediction results
+library(ggplot2)
+# Create chart
+plot <- ggplot(data, aes(x = resale_price_new, y = predictions_all)) +
+  geom_point(shape = 3, size = 2, color = "#008B8B") +
+  geom_abline(slope = 1, intercept = 0, color = 'black', linetype = "dashed") + 
+  labs(x = "Actual Price (USD)", y = "Predicted Price (USD)", title = "Actual Price vs Predicted Price\n(Gradient Boosting Machine Model on Original Data）") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 26, hjust = 0.5),
+    axis.title = element_text(size =24, color = 'black'),
+    axis.text = element_text(size = 24, color = 'black'),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    axis.ticks = element_line(linewidth = 1),
+    panel.border = element_rect(colour = "black", fill = NA, linewidth = 1),
+    axis.line = element_line(colour = "black", linewidth = 0.5))
+
+#show the plot
+plot
+
+# Save the picture as a PNG file
+ggsave("GBM_raw_v3.png", plot, width = 13, height = 9, dpi = 300)
+```
+
+Logarithm of data
+
+```{r data03}
+library(dplyr)
+
+# Read data
+data <- read.csv("updated_theme_data_model_without_9000.csv")
+
+# Applying the log conversion to the specified column, minifigures_count adds 1 to take the logarithm
+data_transformed <- data %>%
+  mutate(across(.cols = -c(is_starwars, is_from_retired_theme, rating, minifigures_count),
+                .fns = ~ log(.))) %>%
+  mutate(minifigures_count = log(minifigures_count + 1))
+
+# Save the processed data to a new file
+write.csv(data_transformed, "log_transformed_model_data_theme.csv", row.names = FALSE)
+```
+
+
+```{r model_v3_2, fig.width=13, fig.height=9}
+library(gbm)
+library(dplyr)
+library(caret)
+library(Metrics)
+
+# Read data
+data <- read.csv("final_model_data_log.csv")
+
+# Converts categorical variables to factor types
+data$is_starwars <- as.factor(data$is_starwars)
+data$is_from_retired_theme <- as.factor(data$is_from_retired_theme)
+
+# Set random seed
+set.seed(123)
+
+# Devide 80% train data and 20% test data
+rows <- nrow(data)
+shuffled_indices <- sample(1:rows, rows)
+train_size <- floor(0.8 * rows) # Ensure it's an integer
+train_indices <- shuffled_indices[1:train_size]         # 80% as train data
+test_indices <- shuffled_indices[(train_size + 1):rows] # 20% as test data
+
+train_data <- data[train_indices, ]
+test_data <- data[test_indices, ]
+
+#nrow(train_data)
+#nrow(test_data)
+
+# Parameter combination list
+params <- expand.grid(n_trees = c(100, 200, 300, 400, 500),
+                      interaction_depth = c(2, 3, 4),
+                      shrinkage = c(0.05, 0.1, 0.15))
+
+# Train the model and calculate the performance function
+train_and_evaluate <- function(train_data, n_trees, interaction_depth, shrinkage) {
+    model <- gbm(resale_price_new ~ ., data = train_data, distribution = "gaussian",
+                 n.trees = n_trees, interaction.depth = interaction_depth, shrinkage = shrinkage,
+                 cv.folds = 10, verbose = FALSE)
+    
+    predictions <- exp(predict(model, train_data, n.trees = n_trees))
+    rmse_value <- rmse(exp(train_data$resale_price_new), predictions)
+    r_square_value <- R2(exp(train_data$resale_price_new), predictions)
+    
+    return(list(model = model, rmse = rmse_value, r_square = r_square_value))
+}
+
+# Iterate through parameter combinations and store the results
+results <- list()
+for(i in 1:nrow(params)) {
+    p <- params[i, ]
+    result <- train_and_evaluate(train_data, p$n_trees, p$interaction_depth, p$shrinkage)
+    results[[i]] <- list(params = p, rmse = result$rmse, r_square = result$r_square)
+    cat(sprintf("n_trees: %d, depth: %d, shrinkage: %.2f, RMSE: %.2f, R2: %.2f\n",
+                p$n_trees, p$interaction_depth, p$shrinkage, result$rmse, result$r_square))
+}
+
+# Find the best results
+best_rmse <- Inf
+best_params <- NULL
+best_r_square <- -Inf
+
+for(result in results) {
+    if(result$rmse < best_rmse) {
+        best_rmse <- result$rmse
+        best_params <- result$params
+        best_r_square <- result$r_square
+    }
+}
+
+# Displays the best combination of parameters and their performance
+cat("Best Parameters:\n")
+print(best_params)
+cat(sprintf("Best RMSE: %.2f\n", best_rmse))
+cat(sprintf("Best R-square: %.2f\n", best_r_square))
+
+# Evaluate the model on the test data set, using the best parameters found
+best_n_trees <- best_params$n_trees
+best_interaction_depth <- best_params$interaction_depth
+best_shrinkage <- best_params$shrinkage
+
+best_model <- train_and_evaluate(train_data, best_n_trees, best_interaction_depth, best_shrinkage)$model
+predictions_test <- exp(predict(best_model, test_data, n.trees = best_n_trees))
+rmse_test <- rmse(exp(test_data$resale_price_new), predictions_test)
+r_square_test <- R2(exp(test_data$resale_price_new), predictions_test)
+Correlation_test <- cor(test_data$resale_price_new, predictions_test)
+
+cat("RMSE on Test Set:", rmse_test, "\n")
+cat("R-square on Test Set:", r_square_test, "\n")
+cat("Correlation on Test Set:", Correlation_test, "\n")
+
+# Make predictions
+predictions_all_transformed <- exp(predict(best_model, data, n.trees = best_n_trees))
+
+
+# Visual prediction results
+library(ggplot2)
+# Create chart
+plot <- ggplot(data, aes(x = exp(resale_price_new), y = predictions_all_transformed)) +
+  geom_point(shape = 3, size = 2, color = "#008B8B") +
+  geom_abline(slope = 1, intercept = 0, color = 'black', linetype = "dashed") +  
+  labs(x = "Actual Price (USD)", y = "Predicted Price (USD)", title = "Actual Price vs Predicted Price\n(Gradient Boosting Machine Model on Logarithmic Data）") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 26, hjust = 0.5),
+    axis.title = element_text(size =24, color = 'black'),
+    axis.text = element_text(size = 24, color = 'black'),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    axis.ticks = element_line(linewidth = 1),
+    panel.border = element_rect(colour = "black", fill = NA, linewidth = 1),
+    axis.line = element_line(colour = "black", linewidth = 0.5))
+
+#show the plot
+plot
+
+# Save the picture as a PNG file
+ggsave("GBM_log_v3.png", plot, width = 13, height = 9, dpi = 300)
+```
+

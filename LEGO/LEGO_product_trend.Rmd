@@ -1,0 +1,506 @@
+---
+title: "lego_product_trend"
+output: html_document
+date: "2024-02-14"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, fig.width = 11, fig.height = 6}
+# Install the packages (if needed)
+# install.packages("ggplot2")
+# install.packages("tidyverse") 
+# install.packages("RColorBrewer")
+# install.packages("kableExtra")
+# install.packages("scales")
+# install.packages("rmarkdown")
+
+# Load necessary libraries
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(RColorBrewer)
+library(kableExtra)
+library(forcats) # For fct_reorder
+library(scales)
+library(knitr) # knit R script to generate a markdown file.
+library(rmarkdown)
+
+
+# Read the product_data from CSV file
+product_data <- read.csv("product_data.csv")
+summary(product_data)
+
+# Trends in LEGO sets
+
+# Summarize data to get the count of sets per year
+sets <- product_data %>% 
+  group_by(year) %>%
+  summarise(set_counts = n())
+
+# Find the set counts for the year 1997
+sets_1997 <- sets %>% 
+  filter(year == 1997) %>% 
+  select(year, set_counts)
+
+# Find the set counts for the year 2002
+sets_2002 <- sets %>% 
+  filter(year == 2002) %>% 
+  select(year, set_counts)
+
+# Find the set counts for the year 2005
+sets_2005 <- sets %>% 
+  filter(year == 2005) %>% 
+  select(year, set_counts)
+
+# Find the set counts for the year 2019
+sets_2019 <- sets %>% 
+  filter(year == 2019) %>% 
+  select(year, set_counts)
+
+# A bar plot to visualize number of sets by year from 1953 to 2022.
+sets_by_year <- ggplot(sets, aes(x = year, y = set_counts)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  geom_bar(data = subset(sets, set_counts == max(set_counts)), fill = "orange", stat = "identity") + 
+  geom_label(data = subset(sets, set_counts == max(set_counts)), 
+             aes(label = set_counts, y = set_counts), fill = "yellow", size = 4, vjust = -0.15, hjust = -0.01) +
+  geom_text(data = sets_1997, aes(label = set_counts, y = set_counts), hjust = 0.95, vjust = -1.2, size = 4) + # Add 1997 value
+  geom_text(data = sets_2002, aes(label = set_counts, y = set_counts), hjust = 0.5, vjust = -0.65, size = 4) + # Add 2002 value
+  geom_text(data = sets_2005, aes(label = set_counts, y = set_counts), hjust = 0.5, vjust = -3, size = 4) + # Add 2005 value
+  geom_text(data = sets_2019, aes(label = set_counts, y = set_counts), hjust = 1, vjust = -1, size = 4) + # Add 2019 value
+  geom_segment(data = sets_1997, aes(x = year, y = set_counts, xend = year, 
+                                     yend = set_counts + 18), color = "darkgrey") +
+  geom_segment(data = sets_2005, aes(x = year, y = set_counts, xend = year, 
+                                     yend = set_counts + 70), color = "darkgrey") +
+  geom_segment(data = sets_2019, aes(x = year, y = set_counts, xend = year - 0.5, 
+                                     yend = set_counts + 18), color = "darkgrey") +
+  labs(title = "Number of LEGO Sets by Year (1953 - 2022)",
+       x = "Year",
+       y = "Number of Sets") +
+  scale_x_continuous(breaks = seq(1953, 2022, by = 3)) + # Adjust x-axis breaks
+  theme_minimal() +
+  theme(axis.text.x = element_text(size = 14, color = "black", angle = 90, vjust = 0.5, hjust = 0.5),
+        axis.text.y = element_text(size = 14, color = "black"),
+        axis.title.x = element_text(size = 14), 
+        axis.title.y = element_text(size = 14),
+        plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+        legend.title = element_text(size = 14),  
+        legend.text = element_text(size = 14),
+        axis.ticks = element_line(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.border = element_rect(color = "black", size = 0.75, fill = NA))
+
+sets_by_year
+
+# Save the plot 
+ggsave("sets_by_year.png", sets_by_year, width = 10, height = 6, dpi = 300)
+
+# Calculate average parts per set by year
+average_parts_yearly <- product_data %>%
+  group_by(year) %>%
+  summarise(average_parts = mean(parts_count))
+
+# Find the average parts counts for the year 1960
+average_parts_1960 <- average_parts_yearly %>% 
+  filter(year == 1960) %>% 
+  select(year, average_parts)
+
+# Create a line to show average parts per set by year with a scatter plot
+parts_per_set <- ggplot(average_parts_yearly, aes(x = year, y = average_parts)) +
+  geom_line(color = "darkolivegreen3", size = 2) + 
+  geom_point(color = "darkgreen", size = 1.5, shape = 16) + 
+  
+  geom_smooth(method = "lm", se = FALSE, color = "black", linetype = "dashed", size = 0.5) +
+  scale_x_continuous(breaks = seq(1953, max(average_parts_yearly$year), by = 3)) +
+  scale_y_continuous(breaks = seq(0, 300, by = 50)) +
+  geom_label(data=subset(average_parts_yearly, 
+                         average_parts == max(average_parts)), 
+             aes(label = sprintf("%.0f", average_parts), y = average_parts), 
+             size = 4, vjust = 0.35, hjust = 1.25, fill = "yellow") +
+  labs(title = "Average Parts per LEGO Set (1953 - 2022)",
+       x = "Year",
+       y = "Average Parts per Set",
+       color = "Average parts 
+       per Set") +
+  theme_minimal() +
+  theme(plot.title = element_text(face = "bold", size = 16, hjust = 0.5),
+        axis.text.x = element_text(size = 14, color = "black", angle = 90, hjust = 0.75),
+        axis.text.y = element_text(size = 14, color = "black", hjust = 0.5),
+        axis.title.x = element_text(size = 14),
+        axis.title.y = element_text(size = 14),
+        legend.position = "right",
+        legend.title = element_text(size = 14),  
+        legend.text = element_text(size = 14),
+        axis.ticks = element_line(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.border = element_rect(color = "black", size = 0.75, fill = NA))
+
+parts_per_set
+
+# Save the plot 
+ggsave("parts_per_set.png", parts_per_set, width = 10, height = 6, dpi = 300)
+
+# The top 10 LEGO sets with the highest number of parts.
+top_10_sets <- product_data %>%
+  arrange(desc(parts_count)) %>%
+  select(set_name, set_id, parts_count, year) %>%
+  head(10) %>%
+  mutate(set_infor = paste(set_name, paste("(", set_id, ")", sep=""), sep = " ")) # Combine set_name and set_id with parentheses
+
+# Print the table showing top 10 LEGO sets with the highest number of parts
+print(top_10_sets)
+kable(top_10_sets) %>%
+  kable_styling(full_width = FALSE, latex_options = "HOLD_position")
+
+# Display all the palettes available in RColorBrewer.
+display.brewer.all()
+
+# Create the bar plot showing top 10 LEGO sets with the highest number of parts
+top_10_sets_plot <- ggplot(top_10_sets, aes(x = fct_reorder(set_infor, parts_count),
+                                            y = parts_count, fill = set_name)) +
+  geom_col() + # Use geom_col for bar plots
+  coord_flip() + # Flipping coordinates for horizontal bars
+  geom_text(aes(label = parts_count), position = position_stack(vjust = 0.82), 
+            hjust = -0.1, size = 5) + # Add part counts labels
+  labs(title = "Top 10 LEGO Sets with the highest number of parts (1953 - 2022)",
+       x = "Set Name",
+       y = "Number of Parts") +
+  scale_fill_brewer(palette = "Set3") + # Use a qualitative color palette
+  theme_minimal() +
+  theme(plot.title = element_text(face = "bold", size = 16, hjust = 0.5),
+        axis.text.x = element_blank(),  # Remove x-axis labels
+        axis.text.y = element_text(size = 14, color = "black"),
+        axis.title.x = element_text(size = 14, color = "black", margin = margin(t = 10)), # Bold and resize x-axis title
+        axis.title.y = element_text(size = 14, color = "black"),
+        axis.ticks.y = element_line(),  # Add y-axis ticks
+        panel.grid.major = element_blank(),  # Remove major grid lines
+        panel.grid.minor = element_blank(),
+        panel.border = element_rect(color = "black", size = 0.75, fill = NA),
+        legend.position = "none")
+
+top_10_sets_plot
+
+# Save the plot 
+ggsave("top_10_sets_plot.png", top_10_sets_plot, width = 16, height = 10, dpi = 300)
+
+# Trends in LEGO themes
+
+# Summarize to get the number of unique themes by year
+themes <- product_data %>%
+  group_by(year) %>%
+  summarise(theme_counts = n_distinct(theme_id))
+
+# Find the theme counts for the year 1953
+themes_1953 <- themes %>% 
+  filter(year == 1953) %>% 
+  select(year, theme_counts)
+
+# Find the theme counts for the year 2022
+themes_2022 <- themes %>% 
+  filter(year == 2022) %>% 
+  select(year, theme_counts)
+
+# Create a subset for the first occurrence of the maximum theme count
+max_theme_year <- themes %>%
+  filter(theme_counts == max(theme_counts)) %>%
+  slice(1)  # Select only the first row of the max values
+
+# A bar plot to visualize number of unique themes by year from 1953 to 2022.
+themes_by_year <- ggplot(themes, aes(x = year, y = theme_counts)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  geom_bar(data = subset(themes, theme_counts == max(theme_counts)), fill = "orange", stat = "identity") + 
+  geom_label(data = max_theme_year, 
+             aes(label = theme_counts, y = theme_counts), fill = "yellow", size = 4, vjust = -0.15, hjust = 0.25) +
+  geom_text(data = themes_1953, aes(label = theme_counts, y = theme_counts), hjust = 0.5, vjust = -0.5, size = 4) + # Add 1953 value
+  geom_text(data = themes_2022, aes(label = theme_counts, y = theme_counts), hjust = 0.25, vjust = -0.5, size = 4) + # Add 2022 value
+  labs(title = "Number of Unique Themes by Year (1953 - 2022)",
+       x = "Year",
+       y = "Number of Unique Themes",
+       fill = "Number of Unique Themes") +
+  scale_x_continuous(breaks = seq(1953, 2022, by = 3)) + # Adjust x-axis breaks
+  theme_minimal() +
+  theme(axis.text.x = element_text(size = 14, color = "black", angle = 90, hjust = 0.5),
+        axis.text.y = element_text(size = 14, color = "black"),
+        axis.title.x = element_text(size = 14), 
+        axis.title.y = element_text(size = 14), 
+        plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+        legend.title = element_text(size = 14),  
+        legend.text = element_text(size = 14),
+        axis.ticks = element_line(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.border = element_rect(color = "black", size = 0.75, fill = NA))
+
+themes_by_year
+
+# Save the plot 
+ggsave("themes_by_year.png", themes_by_year, width = 10, height = 6, dpi = 300)
+
+# Exclude the themes with parent_id to keep just the main themes
+themes_with_no_parent <- product_data %>%
+  filter(parent_id == 0)
+
+# Exclude not LEGO themes, then aggregate and find top 10 themes
+top_10_themes <- themes_with_no_parent %>%
+  filter(!(theme_name %in% c('Gear','Gears','Books',
+                             'LEGO Brand Store','Service Packs',
+                             'Promotional','Primo'))) %>% # Exclude categories not LEGO themes
+  group_by(theme_id, theme_name) %>%
+  summarise(total_sets = n()) %>%
+  arrange(desc(total_sets)) %>%
+  head(10)
+
+# Print out top 10 LEGO themes with the highest number of sets.
+print(top_10_themes)
+kable(top_10_themes) %>%
+  kable_styling(full_width = FALSE, latex_options = "HOLD_position")
+
+# Create the bar plot showing top 10 LEGO themes with the highest number of sets.
+top_10_themes_plot <- ggplot(top_10_themes, aes(x = fct_reorder(theme_name, total_sets),
+                                                y = total_sets, fill = theme_name)) +
+  geom_col() + # Use geom_col for bar plots
+  coord_flip() + # Flipping coordinates for horizontal bars
+  geom_text(aes(label = total_sets), position = position_stack(vjust = 0.6), 
+            hjust = -0.15, size = 5) + # Add part counts labels
+  labs(title = "Top 10 LEGO Themes with the highest number of sets (1953 - 2022)",
+       x = "Theme Name",
+       y = "Number of Sets") +
+  scale_fill_brewer(palette = "Set3") + # Use a qualitative color palette
+  theme_minimal() +
+  theme(plot.title = element_text(face = "bold", size = 16, hjust = 0.5),
+        axis.text.x = element_blank(),  # Remove x-axis labels
+        axis.text.y = element_text(size = 14, color = "black"),
+        axis.title.x = element_text(size = 14, color = "black", margin = margin(t = 10)), # Bold and resize x-axis title
+        axis.title.y = element_text(size = 14),
+        axis.ticks.y = element_line(),  # Add y-axis ticks
+        panel.grid.major = element_blank(),  # Remove major grid lines
+        panel.grid.minor = element_blank(),
+        panel.border = element_rect(color = "black", size = 0.75, fill = NA),
+        legend.position = "none")
+
+top_10_themes_plot
+
+# Save the plot 
+ggsave("top_10_themes_plot.png", top_10_themes_plot, width = 16, height = 10, dpi = 300)
+
+# Trends in LEGO colours
+
+# Read the color_data from CSV file
+color_data <- read.csv("colour_data.csv")
+summary(color_data)
+
+# Make sure the color codes have a # in front
+color_data$rgb <- tolower(paste0("#", color_data$rgb))  
+
+# Summarize to get the number of unique colors by year
+color <- color_data %>%
+  group_by(year) %>%
+  summarise(color_counts = n_distinct(rgb))
+
+# Find the color counts for the year 1953
+color_1953 <- color %>% 
+  filter(year == 1953) %>% 
+  select(year, color_counts)
+
+# Find the color counts for the year 2009
+color_2009 <- color %>% 
+  filter(year == 2009) %>% 
+  select(year, color_counts)
+
+# Find the color counts for the year 2022
+color_2022 <- color %>% 
+  filter(year == 2022) %>% 
+  select(year, color_counts)
+
+# A bar plot to visualize number of colours by year from 1953 to 2022.
+color_by_year <- ggplot(color, aes(x = year, y = color_counts)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  geom_bar(data = subset(color, color_counts == max(color_counts)), stat = "identity", fill = "orange") + 
+  geom_label(data = subset(color, color_counts == max(color_counts)), 
+             aes(label = color_counts, y = color_counts), fill = "yellow", size = 4, vjust = -0.15, hjust = -0.025) +
+  geom_text(data = color_1953, aes(label = color_counts, y = color_counts), hjust = 0.5, vjust = -0.75, size = 4) + # Add 1953 value
+  geom_text(data = color_2009, aes(label = color_counts, y = color_counts), hjust = 0.5, vjust = -4, size = 4) + # Add 2009 value
+  geom_text(data = color_2022, aes(label = color_counts, y = color_counts), hjust = 0.5, vjust = -0.75, size = 4) + # Add 2022 value
+  geom_segment(data = color_2009, aes(x = year, y = color_counts, xend = year, 
+                                      yend = color_counts + 10), color = "darkgrey") +
+  labs(title = "Number of LEGO Unique Colours by Year (1953 - 2022)",
+       x = "Year",
+       y = "Number of Unique Colours",
+       fill = "Number of 
+Unique Colours") +
+  scale_x_continuous(breaks = seq(1953, 2022, by = 3)) + # Adjust x-axis breaks
+  theme_minimal() +
+  theme(axis.text.x = element_text(size = 14, color = "black", angle = 90, hjust = 0.5),
+        axis.text.y = element_text(size = 14, color = "black"),
+        axis.title.x = element_text(size = 14), 
+        axis.title.y = element_text(size = 14), 
+        plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+        legend.title = element_text(size = 14),  
+        legend.text = element_text(size = 14),
+        axis.ticks = element_line(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.border = element_rect(color = "black", size = 0.75, fill = NA))
+
+color_by_year
+
+# Save the plot 
+ggsave("color_by_year.png", color_by_year, width = 10, height = 6, dpi = 300)
+
+# Create palette from rgb
+pal <- unique(color_data$rgb)
+names(pal) <- unique(pal) 
+
+# Calculate total parts for each year
+total_parts_per_year <- color_data %>%
+  group_by(year) %>%
+  summarise(total_parts = sum(parts_count, na.rm = TRUE))
+
+# Calculate parts for each RGB color per year
+parts_per_rgb_per_year <- color_data %>%
+  group_by(year, rgb) %>%
+  summarise(parts_count = sum(parts_count, na.rm = TRUE)) 
+
+# Calculate the percentage of each RGB color per year
+freq_color <- parts_per_rgb_per_year %>%
+  left_join(total_parts_per_year, by = "year") %>%
+  mutate(percent = (parts_count / total_parts) * 100)
+
+# Change the cellname of color_name from 'black' to 'Black'
+color_data$color_name[color_data$color_name == "black"] <- "Black"
+
+# A bar plot to visualize colour distribution by year from 1953 to 2022.
+rf_color_by_year <- freq_color %>%
+  ggplot(aes(x = year, y = percent, fill = rgb)) +  # Use 'rgb' for fill
+  geom_area(position = "fill") + 
+  labs(x = "Year", 
+       y = "Percentage of Colour Used", 
+       title = "Colour Distribution of LEGO parts by Year (1953 - 2022)") +
+  scale_fill_manual(values = pal) + 
+  scale_x_continuous(breaks = seq(1953, 2022, by = 3)) + 
+  scale_y_continuous(labels = percent) +  
+  theme(axis.text.x = element_text(size = 14, color = 'black', angle = 90, hjust = 1, vjust = 0.5),
+        panel.grid = element_blank(),
+        axis.text.y = element_text(size = 14, color = 'black'),
+        axis.ticks = element_line(),
+        axis.title.x = element_text(size = 14), 
+        axis.title.y = element_text(size = 14), 
+        plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+        legend.position = "none")
+
+rf_color_by_year
+
+# Save the plot 
+ggsave("rf_color_by_year.png", rf_color_by_year, width = 10, height = 6, dpi = 300)
+
+# Summarize the top 20 colours with the highest number of parts for 1953-1980
+top_colors_1953_1980 <- color_data %>%
+  filter(year >= 1953 & year <= 1980) %>%
+  group_by(color_name, rgb) %>%
+  summarise(total_parts = sum(parts_count, na.rm = TRUE)) %>%
+  arrange(desc(total_parts)) %>%
+  head(20) %>%
+  mutate(formatted_parts = number(total_parts / 1000, accuracy = 0.1, suffix = "K"))
+
+# A bar plot to visualize the top 20 colours with the highest number of parts for 1953-1980
+top_colors_1953_1980_plot <- ggplot(top_colors_1953_1980, 
+                                    aes(x = reorder(color_name, desc(total_parts)), y = total_parts, fill = rgb)) +
+  geom_col(colour = 'darkgrey') +
+  geom_text(aes(label = formatted_parts), size = 4, vjust = -0.5, colour = "black") +
+  scale_fill_identity() +
+  scale_y_continuous(labels = label_number_si(), 
+                     expand = expansion(mult = c(0.025, 0.1))) +
+  labs(title = "Colour dominance of LEGO parts (1953 - 1980)",
+       x = 'Colour',
+       y = "Number of Parts") +
+  theme(axis.text.x = element_text(size = 14, color = 'black', angle = 90, hjust = 1, vjust = 0.5),
+        panel.grid = element_blank(),
+        axis.text.y = element_blank(),  # Hide y-axis text
+        axis.ticks.y = element_blank(),  # Hide y-axis ticks
+        axis.title = element_text(size = 14, color = 'black'), 
+        plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+        panel.background = element_blank(),  
+        panel.border = element_rect(color = "black", size = 0.75, fill = NA))
+
+top_colors_1953_1980_plot
+
+# Save the plot 
+ggsave("top_colors_1953_1980_plot.png", top_colors_1953_1980_plot, width = 12, height = 7, dpi = 300)
+
+
+# Summarize the top 20 colours with the highest number of parts for 1981-2004
+top_colors_1981_2004 <- color_data %>%
+  filter(year >= 1981 & year <= 2004) %>%
+  group_by(color_name, rgb) %>%
+  summarise(total_parts = sum(parts_count, na.rm = TRUE)) %>%
+  arrange(desc(total_parts)) %>%
+  head(20) %>%
+  mutate(formatted_parts = number(total_parts / 1000, accuracy = 0.1, suffix = "K"))
+
+# A bar plot to visualize the top 20 colours with the highest number of parts for 1981-2004
+top_colors_1981_2004_plot <- ggplot(top_colors_1981_2004, 
+                                    aes(x = reorder(color_name, desc(total_parts)), y = total_parts, fill = rgb)) +
+  geom_col(colour = 'darkgrey') +
+  geom_text(aes(label = formatted_parts), size = 4, vjust = -0.5, colour = "black") +
+  scale_fill_identity() +
+  scale_y_continuous(labels = label_number_si(), 
+                     expand = expansion(mult = c(0.025, 0.1))) +
+  labs(title = "Colour dominance of LEGO parts (1981 - 2004)",
+       x = 'Colour',
+       y = "Number of Parts") +
+  theme(axis.text.x = element_text(size = 14, color = 'black', angle = 90, hjust = 1, vjust = 0.5),
+        panel.grid = element_blank(),
+        axis.text.y = element_blank(),  # Hide y-axis text
+        axis.ticks.y = element_blank(),  # Hide y-axis ticks
+        axis.title = element_text(size = 14, color = 'black'), 
+        plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+        panel.background = element_blank(),  
+        panel.border = element_rect(color = "black", size = 0.75, fill = NA))
+
+top_colors_1981_2004_plot
+
+# Save the plot 
+ggsave("top_colors_1981_2004_plot.png", top_colors_1981_2004_plot, width = 12, height = 7, dpi = 300)
+
+# Summarize the top 20 colours with the highest number of parts for 2005-2022
+top_colors_2005_2022 <- color_data %>%
+  filter(year >= 2005 & year <= 2022) %>%
+  group_by(color_name, rgb) %>%
+  summarise(total_parts = sum(parts_count, na.rm = TRUE)) %>%
+  arrange(desc(total_parts)) %>%
+  head(20) %>%
+  mutate(formatted_parts = paste0(round(total_parts / 1000), "K"))
+
+# A bar plot to visualize the top 20 colours with the highest number of parts 
+top_colors_2005_2022_plot <- ggplot(top_colors_2005_2022, 
+                                    aes(x = reorder(color_name, desc(total_parts)), y = total_parts, fill = rgb)) +
+  geom_col(colour = 'darkgrey') +
+  geom_text(aes(label = formatted_parts), size = 4, vjust = -0.5, colour = "black") +
+  scale_fill_identity() +
+  scale_y_continuous(labels = label_number(auto = TRUE), 
+                     expand = expansion(mult = c(0.025, 0.1))) +
+  labs(title = "Colour dominance of LEGO parts (2005 - 2022)",
+       x = 'Colour',
+       y = "Number of Parts") +
+  theme(axis.text.x = element_text(size = 14, color = 'black', angle = 90, hjust = 1, vjust = 0.5),
+        panel.grid = element_blank(),
+        axis.text.y = element_blank(),  # Hide y-axis text
+        axis.ticks.y = element_blank(),  # Hide y-axis ticks
+        axis.title = element_text(size = 14, color = 'black'), 
+        plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+        panel.background = element_blank(),  
+        panel.border = element_rect(color = "black", size = 0.75, fill = NA))
+
+top_colors_2005_2022_plot
+
+# Save the plot 
+ggsave("top_colors_2005_2022_plot.png", top_colors_2005_2022_plot, width = 12, height = 7, dpi = 300)
+
+```
+
