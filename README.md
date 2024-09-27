@@ -1,7 +1,6 @@
 # Data Analyst
 
 Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](linkedin.com/in/thanh-tra-ngo)
-)
 
 ### Skills: R, Python, Excel, Tableau
 ### Certifications: 
