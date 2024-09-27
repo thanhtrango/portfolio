@@ -1,1 +1,32 @@
+A Comprehensive Study Of Lego Product Trends And Market Dynamics
+
+This project delved into the historical progression of LEGO sets and themes, while also examining the advancement in product complexity and the refinement in the usage of colour palettes. Additionally, this study investigated the variations in retail and resale prices of LEGO products over time, focusing on the themes with the highest values in the secondary market. Moreover, predictive models for LEGO resale prices were established, allowing for an intricate exploration of the factors that impact these market values.
+Author: Zichen Zhou, Xin Lei, Thanh Tra Ngo
+
+Raw datasets of this project come from 3 sources:
+(1) Rebrickable dataset
+• colors.csv
+• inventories.csv
+• inventory_parts.csv • sets.csv
+• themes.csv
+(2) Brickset dataset
+• brickset_set.csv
+(3) Kaggle dataset
+• kaggle_sets.csv
+
+Cleanned data includes:
+• product_data.csv
+• colour_data.csv
+• market_data.csv
+• model_data.csv
+• final_model_data.csv
+• final_model_data._log.csv
+
+Codes for data wrangling, data analysis and prediction model of this project:
+- Data Wrangling: LEGO_rawdata_wrangling.ipynb # Jupyter notebook for preprocessing and cleaning datasets.
+- Product Trend Analysis: LEGO_product_trend.Rmd # R markdown for product analysis and visualisation of the processed data.
+- Secondary Market Analysis: LEGO_market_dynamics_analysis.ipynb # Jupyter notebook for market analysis and visualisation of the processed data.
+- Resale Prediction Model: 
+  + LEGO_CorrelationAnalysis_ModelGBM.Rmd # R Markdown for Correlation analysis and resale prediction model by GBM.
+  + LEGO_price_prediction(LR&RF).ipynb # Jupyter notebook for resale prediction model by Linear Regression and Random Forest Model.
 
