@@ -25,16 +25,19 @@ Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](linkedin.com/in
 
 ## Work Experience
 **Smartlog Supply Chain Solutions Corporation, Vietnam**
+
 ***Logistics System And Solution Consultant | 2020 - 2023***
 - Design and deliver consulting services for logistics digital transformation projects.
 - Contribute to process improvements in Transportation Management Software (TMS) and Warehouse Management Software (WMS).
 
 **University of Economics and Law, Vietnam**
+
 ***Lecturer | 2005 – 2023***
 - Teach courses in Econometrics; Project Appraisal & Management and Cross-Cultural Management.
 - Supervise teaching content, schedules, and ensure program quality aligned with AUN-QA standards as Vice Head of International Business Department, Faculty of International Economic Relations (2017 - 2023).
 
 **Vintech City, Vingroup, Vietnam**
+
 ***Program Manager | 2019 – Apr 2020***
 - Develop action and budget plans for SAP and Corporate Semester sponsorship programs.
 - Collaborate with organizations such as SAP-UA, Deloitte, Palo Alto to promote co-sponsorship.
