@@ -3,7 +3,7 @@
 Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](https://www.linkedin.com/in/thanh-tra-ngo/)
 
 ### Techincal Skills: 
-- R, Python, SQL, Tableau, Excel, Visio, ArcGIS Pro, GeoDa
+- R, Python, Tableau, Excel, Visio, ArcGIS Pro, GeoDa
 
 ### Certifications: 
 - Create a Financial Statement using Microsoft Excel, Coursera Project Network, Sep 2024
