@@ -1,6 +1,6 @@
 # Data Analyst
 
-Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](linkedin.com/in/thanh-tra-ngo)
+Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](https://www.linkedin.com/in/thanh-tra-ngo/)
 
 ### Techincal Skills: 
 - R, Python, Excel, Tableau, ArcGIS Pro, GeoDa
