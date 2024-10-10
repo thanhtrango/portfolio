@@ -26,10 +26,6 @@ Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](linkedin.com/in
 - Examine youth offender profiles by gender, ethnicity and and crime behavior using R.
 
 ## Work Experience
-**Logistics System And Solution Consultant** | Smartlog Supply Chain Solutions Corporation, Vietnam | 2020 - 2023
-- Communicate with clients to gather demand information and present tailored logistics solutions.
-- Design and implement digital transformation initiatives for logistics projects, focusing on optimizing transportation systems.
-- Analyze operational data to identify process inefficiencies and improve system performance.
 
 **Lecturer** | University of Economics and Law, Vietnam | 2005 – 2023
 - Deliver courses in Econometrics, Project Appraisal & Management.
