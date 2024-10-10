@@ -4,7 +4,7 @@ Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](linkedin.com/in
 
 ### Skills: R, Python, Excel, Tableau
 ### Certifications: 
-- Create a Financial Statement using Microsoft Excel, Coursera Project Network
+- Create a Financial Statement using Microsoft Excel | Coursera Project Network | Sep 2024
 
 ## Projects
 **Stock Performance and Portfolio Analysis (2014 - 2024)** | _Individual project | May 2024_
@@ -24,25 +24,19 @@ Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](linkedin.com/in
 - Examine youth offender profiles by gender, ethnicity and and crime behavior using R.
 
 ## Work Experience
-**Smartlog Supply Chain Solutions Corporation, Vietnam**
+**Logistics System And Solution Consultant** | Smartlog Supply Chain Solutions Corporation, Vietnam | 2020 - 2023
+- Communicate with clients to gather demand information and present tailored logistics solutions.
+- Design and implement digital transformation initiatives for logistics projects, focusing on optimizing transportation systems.
+- Analyze operational data to identify process inefficiencies and improve system performance.
 
-***Logistics System And Solution Consultant | 2020 - 2023***
-- Design and deliver consulting services for logistics digital transformation projects.
-- Contribute to process improvements in Transportation Management Software (TMS) and Warehouse Management Software (WMS).
+**Lecturer** | University of Economics and Law, Vietnam | 2005 – 2023
+- Deliver courses in Econometrics, Project Appraisal & Management.
+- Manage program quality control as Vice Head of International Business Department, Faculty of International Economic Relations (2017 - 2023).
 
-**University of Economics and Law, Vietnam**
-
-***Lecturer | 2005 – 2023***
-- Teach courses in Econometrics; Project Appraisal & Management and Cross-Cultural Management.
-- Supervise teaching content, schedules, and ensure program quality aligned with AUN-QA standards as Vice Head of International Business Department, Faculty of International Economic Relations (2017 - 2023).
-
-**Vintech City, Vingroup, Vietnam**
-
-***Program Manager | 2019 – Apr 2020***
+**Program Manager** | Vintech City, Vingroup, Vietnam | 2019 – 2020
 - Develop action and budget plans for SAP and Corporate Semester sponsorship programs.
-- Collaborate with organizations such as SAP-UA, Deloitte, Palo Alto to promote co-sponsorship.
-- Organize SAP and AI training programs, including train-the-trainer workshops and university classes. 
-- Establish processes, regulations and reporting systems for program management.
+- Organize SAP and AI training programs; establish processes, regulations and reporting systems for effective program management.
+- Manage stakeholder relationships with SAP-UA, Deloitte, Palo Alto for co-sponsorship.
 
 ## Education
 - M.S., **Applied Data Science**, _University of Canterbury, New Zealand_ (2023 - 2024).
@@ -62,7 +56,7 @@ Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](linkedin.com/in
   
 ## Scholarships
 - **Australian Awards**: Covered stipend and tuition fees for English preparation and Master courses at the University of Sydney (2010 - 2012).
-- **Fulbright Economics Teaching Program**: Covered stipend and tuition fees for Postgraduate course (2007 - 2008).
+- **Fulbright Economics Teaching Program**: Covered stipend and tuition fee for Postgraduate course (2007 - 2008).
 
 
 
