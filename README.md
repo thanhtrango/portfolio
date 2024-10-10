@@ -3,7 +3,7 @@
 Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](https://www.linkedin.com/in/thanh-tra-ngo/)
 
 ### Techincal Skills: 
-- R, Python, Excel, Tableau, ArcGIS Pro, GeoDa
+- R, Python, Excel, Visio, Tableau, ArcGIS Pro, GeoDa
   
 ### Certifications: 
 - Create a Financial Statement using Microsoft Excel, Coursera Project Network, Sep 2024
@@ -27,7 +27,6 @@ Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](https://www.lin
 
 ## Work Experience
 **Logistics System and Solution Consultant | Smartlog Supply Chain Solutions Co., Vietnam** | Jul 2024 – Current (Part-time)
-- Communicate with clients to gather demand information and present tailored logistics solutions.
 - Design and implement digital transformation initiatives for logistics projects, focusing on optimizing transportation systems.
 - Analyze operational data to identify process inefficiencies and improve system performance.
 
