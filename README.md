@@ -6,7 +6,7 @@ Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](linkedin.com/in
 - R, Python, Excel, Tableau, ArcGIS Pro, GeoDa
   
 ### Certifications: 
-- Create a Financial Statement using Microsoft Excel, Coursera Project Network | Sep 2024
+- Create a Financial Statement using Microsoft Excel, Coursera Project Network, Sep 2024
 
 ## Projects
 **Stock Performance and Portfolio Analysis (2014 - 2024)** | _Individual project | May 2024_
