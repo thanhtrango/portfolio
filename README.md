@@ -6,7 +6,7 @@ Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](linkedin.com/in
 - R, Python, Excel, Tableau, ArcGIS Pro, GeoDa
   
 ### Certifications: 
-- Create a Financial Statement using Microsoft Excel | Coursera Project Network | Sep 2024
+- Create a Financial Statement using Microsoft Excel, Coursera Project Network | Sep 2024
 
 ## Projects
 **Stock Performance and Portfolio Analysis (2014 - 2024)** | _Individual project | May 2024_
@@ -47,7 +47,7 @@ Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](linkedin.com/in
 - Phi L. H. Truong, Former CEO, Vintech City, Email: phi@ibpvietnam.com, Tel: (+84)-919-234-583
 
 ## Publications
-- “An incentive for risk taking: The case of banks in Asean 6.”, _(with Minh Q. Le, Thanh T Ngo)_, 2019, _Conferene on Econometrics and Statistical methods: applications in Economics and Finance, HCMC_.
+- “An incentive for risk taking: The case of banks in Asean 6.”, _(with Minh Q. Le, Thanh T Ngo)_, 2019, _Conference on Econometrics and Statistical methods: applications in Economics and Finance, HCMC_.
 - “Incorporating risk into technical efficiency via a semiparametric analysis: the case of ASEAN banks.” _(with Minh Q. Le, Thanh T Ngo)_, 2018, _Journal of Asian Business and Economic Studies_.
 - “Incorporating risk into technical efficiency: the case of ASEAN banks.” _(with Minh Q. Le, Thanh T Ngo)_, 2017, _International Conference on Accounting and Finance (ICOAF) – Da Nang City_.
 - “Do we need big banks in Vietnam? Evidence on Performance.” _(with Minh Q. Le, Thanh T Ngo)_, 2016, _Vietnam Economist Annual Meeting (VEAM) – Da Nang City_.
