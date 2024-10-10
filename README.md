@@ -26,16 +26,16 @@ Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](linkedin.com/in
 - Examine youth offender profiles by gender, ethnicity and and crime behavior using R.
 
 ## Work Experience
-**Logistics System and Solution Consultant** | Smartlog Supply Chain Solutions Co., Vietnam | Jul 2024 – Current (Part-time)
+**Logistics System and Solution Consultant | Smartlog Supply Chain Solutions Co., Vietnam** | Jul 2024 – Current (Part-time)
 - Communicate with clients to gather demand information and present tailored logistics solutions.
 - Design and implement digital transformation initiatives for logistics projects, focusing on optimizing transportation systems.
 - Analyze operational data to identify process inefficiencies and improve system performance.
 
-**Lecturer** | University of Economics and Law, Vietnam | 2005 – 2023
+**Lecturer | University of Economics and Law, Vietnam** | 2005 – 2023
 - Deliver courses in Econometrics, Project Appraisal & Management.
 - Manage program quality control as Vice Head of International Business Department, Faculty of International Economic Relations (2017 - 2023).
 
-**Program Manager** | Vintech City, Vingroup, Vietnam | 2019 – 2020
+**Program Manager | Vintech City, Vingroup, Vietnam** | 2019 – 2020
 - Develop action and budget plans for SAP and Corporate Semester sponsorship programs.
 - Organize SAP and AI training programs; establish processes, regulations and reporting systems for effective program management.
 - Manage stakeholder relationships with SAP-UA, Deloitte, Palo Alto for co-sponsorship.
