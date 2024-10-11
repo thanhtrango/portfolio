@@ -30,14 +30,14 @@ Christchurch | 022-560-7755 | ngothanhtra@gmail.com | [LinkedIn](https://www.lin
 - Design and implement digital transformation initiatives for logistics projects, focusing on optimizing transportation systems.
 - Analyze operational data to identify process inefficiencies and improve system performance.
 
-**Lecturer | University of Economics and Law, Vietnam** | Sep 2005 – Jun 2023
-- Deliver courses in Econometrics, Project Appraisal & Management.
-- Manage program quality control as Vice Head of International Business Department, Faculty of International Economic Relations (2017 - 2023).
-
 **Program Manager | Vintech City, Vingroup, Vietnam** | May 2019 – Apr 2020
 - Develop action and budget plans for SAP and Corporate Semester sponsorship programs.
 - Organize SAP and AI training programs; establish processes, regulations and reporting systems for effective program management.
 - Manage stakeholder relationships with SAP-UA, Deloitte, Palo Alto for co-sponsorship.
+
+**Lecturer | University of Economics and Law, Vietnam** | Sep 2005 – Jun 2023
+- Deliver courses in Econometrics, Project Appraisal & Management.
+- Manage program quality control as Vice Head of International Business Department, Faculty of International Economic Relations (2017 - 2023).
 
 ## Education
 - M.S., **Applied Data Science**, _University of Canterbury, New Zealand_ (2023 - 2024).
